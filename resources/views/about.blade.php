@@ -7,12 +7,10 @@
 .abt-container { max-width: 1140px; margin: 0 auto; }
 
 .abt-hero-deck {
-    position: relative;
-    background: linear-gradient(135deg, rgba(4, 16, 31, 0.88) 0%, rgba(11, 37, 69, 0.92) 100%), url('{{ asset('images/hakkimizdagiris.jpeg') }}');
-    background-size: cover;
-    background-position: center;
-    padding: 72px 0 60px;
+    background: linear-gradient(135deg, #04101F 0%, #0B2545 100%);
+    padding: 56px 0 48px;
     color: white;
+    position: relative;
     overflow: hidden;
 }
 .abt-hero-deck::after {
@@ -237,28 +235,10 @@
                 <p style="color:var(--muted); font-size:0.92rem; line-height:1.75; margin-bottom:24px;">
                     {{ __t('Uzman ekibimiz, en karmaşık operasyonlarda bile sıfır gecikme prensibiyle hareket ederek armatörlerimize ve kiracılarımıza şeffaf, güvenilir ve rekabetçi acentelik çözümleri üretir.', 'Our expert team operates under a zero-delay principle even in complex operations, delivering transparent, reliable and cost-effective agency solutions.') }}
                 </p>
-                <div class="stats-mini-grid">
-                    <div class="stat-mini-card">
-                        <div class="stat-mini-num">100%</div>
-                        <div class="stat-mini-lbl">{{ __t('Güvenilir Hizmet', 'Reliable Service') }}</div>
-                    </div>
-                    <div class="stat-mini-card">
-                        <div class="stat-mini-num">4.000+</div>
-                        <div class="stat-mini-lbl">{{ __t('Başarılı Gemi Uğrağı', 'Successful Vessel Calls') }}</div>
-                    </div>
-                    <div class="stat-mini-card">
-                        <div class="stat-mini-num">12+</div>
-                        <div class="stat-mini-lbl">{{ __t('Ana Liman & Terminal', 'Main Ports & Terminals') }}</div>
-                    </div>
-                    <div class="stat-mini-card">
-                        <div class="stat-mini-num">7/24</div>
-                        <div class="stat-mini-lbl">{{ __t('Canlı Operasyon Masası', 'Live Duty Operations') }}</div>
-                    </div>
-                </div>
             </div>
 
             <div class="abt-img-wrap">
-                <img src="/images/about_corporate.jpg" alt="NAVEXMAR Office" loading="lazy">
+                <img src="{{ asset('images/hakkimizdagiris.jpeg') }}" alt="NAVEXMAR Kurumsal" loading="lazy">
                 <div class="abt-badge">
                     <div class="abt-badge-icon"><i class="fa-solid fa-clock"></i></div>
                     <div>
