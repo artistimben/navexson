@@ -247,7 +247,6 @@
 
                 <div class="hm-hero-stats">
                     <div><div class="hm-stat-num">100<span>%</span></div><div class="hm-stat-lbl">{{ __t('Güvenilir Hizmet', 'Reliable Service') }}</div></div>
-                    <div><div class="hm-stat-num">4<span>K+</span></div><div class="hm-stat-lbl">{{ __t('Yıllık Gemi Uğrağı', 'Annual Vessel Calls') }}</div></div>
                     <div><div class="hm-stat-num">12<span>+</span></div><div class="hm-stat-lbl">{{ __t('Ana Terminal & Liman', 'Key Terminals & Ports') }}</div></div>
                     <div><div class="hm-stat-num">24<span>/7</span></div><div class="hm-stat-lbl">{{ __t('Canlı Operasyon', 'Duty Operations') }}</div></div>
                 </div>
