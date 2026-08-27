@@ -6,7 +6,7 @@
     <title>@yield('title', 'NAVEXMAR — ' . __t('Gemi Acenteliği & Liman Hizmetleri A.Ş.', 'Shipping Agency & Port Services Inc.'))</title>
     <meta name="description" content="NAVEXMAR — {{ __t('İskenderun, Mersin ve Antalya başta olmak üzere tüm Türkiye limanlarında 7/24 profesyonel gemi acenteliği, liman hizmetleri, ikmal ve lojistik.', '24/7 Professional shipping agency, port attendance, bunkering and maritime logistics in Iskenderun, Mersin, Antalya and all Turkish ports.') }}">
     
-    <!-- Modern Typography Fonts -->
+    <link rel="icon" type="image/jpeg" href="{{ asset('images/artisan.jpeg') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -497,7 +497,7 @@
 <nav class="nav">
     <div class="nav-inner">
         <a href="{{ route('home') }}" class="nav-logo">
-            <div class="nav-logo-icon"><i class="fa-solid fa-anchor"></i></div>
+            <img src="{{ asset('images/artisan.jpeg') }}" alt="NAVEX Logo" style="height: 48px; width: 48px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 12px rgba(6, 24, 46, 0.15);">
             <div class="nav-logo-text">NAVEX<span>MAR</span></div>
         </a>
 
@@ -531,7 +531,7 @@
 <div class="mob-drawer" id="mobDrawer">
     <button class="mob-close" id="mobClose">&times;</button>
     <div class="nav-logo" style="margin-bottom:16px;">
-        <div class="nav-logo-icon"><i class="fa-solid fa-anchor"></i></div>
+        <img src="{{ asset('images/artisan.jpeg') }}" alt="NAVEX Logo" style="height: 48px; width: 48px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 12px rgba(6, 24, 46, 0.15);">
         <div class="nav-logo-text">NAVEX<span>MAR</span></div>
     </div>
     
@@ -571,8 +571,8 @@
         <div class="footer-grid">
 
             <div>
-                <div class="footer-logo">
-                    <div class="footer-logo-icon"><i class="fa-solid fa-anchor"></i></div>
+                <div class="footer-logo" style="align-items: flex-start;">
+                    <img src="{{ asset('images/artisan.jpeg') }}" alt="NAVEX Logo" style="height: 54px; width: 54px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.3); margin-bottom: 8px;">
                     <div class="footer-logo-text">NAVEX<span>MAR</span></div>
                 </div>
                 <p class="footer-about-p">{{ __t(\App\Models\SiteSetting::get('about_short', 'İskenderun\'dan Antalya\'ya tüm Akdeniz ve Türkiye limanlarında armatör ve kiracılara 7/24 profesyonel gemi acenteliği ve operasyonel destek hizmetleri sunuyoruz.'), 'Providing 24/7 professional shipping agency services and operational support for shipowners and charterers in Iskenderun, Antalya and all ports of Turkey.') }}</p>

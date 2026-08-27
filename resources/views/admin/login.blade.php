@@ -96,8 +96,9 @@
 <body>
 
     <div class="login-card">
-        <div class="brand-logo">
-            <i class="fa-solid fa-ship"></i> NAVEX<span style="color:#D4AF37;">MAR</span>
+        <div class="brand-logo" style="display:flex; flex-direction:column; align-items:center;">
+            <img src="{{ asset('images/artisan.jpeg') }}" alt="NAVEX Logo" style="height: 72px; width: 72px; object-fit: cover; border-radius: 14px; margin-bottom: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.25);">
+            <div>NAVEX<span style="color:#D4AF37;">MAR</span></div>
             <div style="font-size: 0.85rem; font-weight: 600; color: #94A3B8; margin-top: 4px;">Acente Yönetim Paneli</div>
         </div>
 

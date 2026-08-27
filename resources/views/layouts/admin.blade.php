@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'NAVEXMAR Admin Panel')</title>
     
-    <!-- Fonts -->
+    <link rel="icon" type="image/jpeg" href="{{ asset('images/artisan.jpeg') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -355,8 +355,10 @@
 
     <!-- Sidebar -->
     <aside class="sidebar">
-        <div class="sidebar-brand">
-            <i class="fa-solid fa-anchor"></i> NAVEXMAR <span style="font-size:0.75rem; color:#94A3B8; font-weight:600; margin-left: auto;">{{ __t('PANEL', 'ADMIN') }}</span>
+        <div class="sidebar-brand" style="display:flex; align-items:center; gap:10px;">
+            <img src="{{ asset('images/artisan.jpeg') }}" alt="NAVEX Logo" style="height: 36px; width: 36px; object-fit: cover; border-radius: 8px;">
+            <span>NAVEXMAR</span>
+            <span style="font-size:0.75rem; color:#94A3B8; font-weight:600; margin-left: auto;">{{ __t('PANEL', 'ADMIN') }}</span>
         </div>
 
         <ul class="sidebar-menu">
