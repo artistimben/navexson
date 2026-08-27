@@ -7,10 +7,12 @@
 .abt-container { max-width: 1140px; margin: 0 auto; }
 
 .abt-hero-deck {
-    background: linear-gradient(135deg, #04101F 0%, #0B2545 100%);
-    padding: 56px 0 48px;
-    color: white;
     position: relative;
+    background: linear-gradient(135deg, rgba(4, 16, 31, 0.88) 0%, rgba(11, 37, 69, 0.92) 100%), url('{{ asset('images/hakkimizdagiris.jpeg') }}');
+    background-size: cover;
+    background-position: center;
+    padding: 72px 0 60px;
+    color: white;
     overflow: hidden;
 }
 .abt-hero-deck::after {

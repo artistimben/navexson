@@ -19,9 +19,9 @@
 
 .hm-hero::before {
     content: ''; position: absolute; inset: 0;
-    background-image: url('{{ asset('images/hero_bosphorus.jpg') }}');
+    background-image: url('{{ asset('images/kapakanasayfa.jpeg') }}');
     background-size: cover; background-position: center;
-    opacity: 0.18; filter: saturate(1.3);
+    opacity: 0.35; filter: saturate(1.2);
 }
 
 .hm-hero::after {
