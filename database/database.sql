@@ -1,0 +1,258 @@
+-- NAVEXMAR Database Export for MySQL / MariaDB
+-- phpMyAdmin SQL Dump
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Table structure for table `users`
+--
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL UNIQUE,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `created_at`, `updated_at`) VALUES
+(1, 'NAVEXMAR Yönetici', 'admin@navexmar.com', NOW(), '$2y$12$Nq4ZgXWn5Z8qO8Fz9eH7re8vP9eD9O3qF1o3V7p0u9A7F1d2G3H4K', NOW(), NOW())
+ON DUPLICATE KEY UPDATE `name`=VALUES(`name`);
+
+--
+-- Table structure for table `cache`
+--
+CREATE TABLE IF NOT EXISTS `cache` (
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `expiration` int(11) NOT NULL,
+  PRIMARY KEY (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `cache_locks`
+--
+CREATE TABLE IF NOT EXISTS `cache_locks` (
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `owner` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `expiration` int(11) NOT NULL,
+  PRIMARY KEY (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `jobs`
+--
+CREATE TABLE IF NOT EXISTS `jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `queue` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `attempts` tinyint(3) UNSIGNED NOT NULL,
+  `reserved_at` int(10) UNSIGNED DEFAULT NULL,
+  `available_at` int(10) UNSIGNED NOT NULL,
+  `created_at` int(10) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `jobs_queue_index` (`queue`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `job_batches`
+--
+CREATE TABLE IF NOT EXISTS `job_batches` (
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `total_jobs` int(11) NOT NULL,
+  `pending_jobs` int(11) NOT NULL,
+  `failed_jobs` int(11) NOT NULL,
+  `failed_job_ids` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `options` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cancelled_at` int(11) DEFAULT NULL,
+  `created_at` int(11) NOT NULL,
+  `finished_at` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `failed_jobs`
+--
+CREATE TABLE IF NOT EXISTS `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL UNIQUE,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `services`
+--
+CREATE TABLE IF NOT EXISTS `services` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL UNIQUE,
+  `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `summary` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `features` json DEFAULT NULL,
+  `is_active` tinyint(1) NOT NULL DEFAULT 1,
+  `sort_order` int(11) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `services`
+--
+INSERT INTO `services` (`id`, `title`, `slug`, `icon`, `image`, `summary`, `description`, `features`, `is_active`, `sort_order`, `created_at`, `updated_at`) VALUES
+(1, 'Gemi Acenteliği & Liman Hizmetleri', 'gemi-acenteligi-liman-hizmetleri', 'fa-ship', '/images/svc_port_agency.jpg', 'Türkiye\'nin tüm limanlarında 7/24 kesintisiz profesyonel acentelik, liman giriş-çıkış işlemleri, idari izinler ve operasyonel rehberlik.', 'NAVEXMAR olarak, Ambarlı, Haydarpaşa, İzmit Körfezi (Evyap, Yılport, DP World), Aliağa, Mersin, İskenderun ve Gemlik limanları başta olmak üzere Türkiye\'nin tüm limanlarında armatörlerimize, kiracılarımıza ve gemi işletmecilerimize birinci sınıf acentelik hizmeti sunuyoruz. Gemi geliş öncesi bildirimlerden liman başkanlığı, sahil sağlık, gümrük ve emniyet onaylarına kadar tüm bürokratik süreçleri sıfır gecikme prensibiyle yönetiyoruz.', '["7/24 Kesintisiz Liman & İdari Acentelik", "Gümrük, Sahil Sağlık & Liman Başkanlığı Prosedürleri", "Draft Sörvey & Yükleme / Tahliye Gözetimi", "Yönlendirme, Pilotaj & Römorkör Koordinasyonu", "Nakit Avans (CTP) & Finansal Operasyon Yönetimi"]', 1, 1, NOW(), NOW()),
+(2, 'Türk Boğazları Geçiş Acenteliği', 'turk-bogazlari-gecis-acenteligi', 'fa-compass', '/images/svc_strait_transit.jpg', 'İstanbul ve Çanakkale Boğazı transit geçişlerinde SP-1 / SP-2 bildirimleri, kılavuz kaptan organizasyonu ve kesintisiz geçiş yönetimi.', 'Türk Boğazları (İstanbul ve Çanakkale Boğazı), dünyanın en yoğun, dar ve zorlu deniz yollarından biridir. NAVEXMAR, Boğazlardan transit geçiş yapacak tüm gemi tiplerine (Konteyner, Tanker, Dökme Yük, LPG/LNG) kılavuzluk ve acentelik desteği sağlar. VTS (Deniz Trafik Yönetimi) ile tam entegre sistemimiz sayesinde geminizin Boğaz giriş demir yerlerinden geçiş rotasına kadar olan tüm süreci 7/24 canlı takip ediyoruz.', '["SP-1 & SP-2 Elektronik Bildirim Yönetimi", "Kılavuz Kaptan (Pilotage) ve Römorkör Refakat Tedariği", "Transit Demirleme & İkmal Koordinasyonu", "VTS (Trafik Ayırım Düzeni) Canlı Gemi Takibi", "Çevre Koruma & Tehlikeli Madde Geçiş İzinleri"]', 1, 2, NOW(), NOW()),
+(3, 'Yakıt (Bunkering) & Kumanya İkmali', 'yakit-ve-kumanya-ikmali', 'fa-gas-pump', '/images/svc_bunkering.jpg', 'ISO 8217 standartlarına uygun VLSFO, MGO, Madeni yağ ikmalleri ile taze kumanya ve teknik malzeme tedariği.', 'Gemi yakıt ikmali (Bunkering) ve kumanya tedariğinde zamanlama ve ürün kalitesi esastır. NAVEXMAR, İstanbul ve Çanakkale demir sahalarında ile tüm ana limanlarda lisanslı barçlar vasıtasıyla kesintisiz yakıt ve madeni yağ teslimatları organize eder. Ayrıca taze gıda, içme suyu, güverte ve makine sarf malzemeleri geminize eksiksiz ulaştırılır.', '["ISO 8217 Standartlarında VLSFO & MGO Yakıt İkmali", "Madeni Yağ (Lube Oil) Varil & Tanker Teslimatı", "Taze Kumanya, Donuk Gıda & İçme Suyu Tedariği", "Gümrüklü Transit Mağaza & Teknik Malzeme Teslimi", "Atık Alım (Marpol) & Sludge Bilge Transfer Hizmetleri"]', 1, 3, NOW(), NOW()),
+(4, 'Mürettebat Değişimi & Kara Lojistiği', 'murettebat-degisimi-kara-lojistigi', 'fa-users-gear', '/images/svc_crew_change.jpg', 'Vize işlemleri, VIP havalimanı transferleri, otel konaklamaları, tıbbi destek ve 7/24 acente botu servisi.', 'Gemi adamlarının değişimi ve kara lojistiği acenteliğin en hassas insan odaklı süreçlerinden biridir. NAVEXMAR, İstanbul Havalimanı (IST) ve Sabiha Gökçen (SAW) başta olmak üzere Türkiye geneli havalimanlarında karşılama, OKTB vize onayları, lüks araç transferleri, otel konaklamaları ve demir alanında acente botu transferleri ile personelinizin emniyetle değişimini gerçekleştirir.', '["OKTB (OK to Board) & Gümrük Vize İzinleri", "7/24 VIP Havalimanı Karşılama & Araç Transferi", "Demir Sahasında Kesintisiz Hızlı Acente Botu Hizmeti", "Tıbbi Danışmanlık, Hastane & Acil Tahliye Desteği", "Otel Konaklama & Uçak Bileti Rezerve Yönetimi"]', 1, 4, NOW(), NOW()),
+(5, 'Yük & Konteyner Operasyonları', 'yuk-ve-konteyner-operasyonlari', 'fa-boxes-stacked', '/images/svc_cargo.jpg', 'Proje kargo, dökme yük, konteyner tahliye/yükleme, kargo manifestosu, ordino ve gümrük desteği.', 'Taşınan navlunun güvenliği, doğru elleçlenmesi ve zamanında teslimatı için charterer ve armatörlerimiz adına uçtan uca lojistik destek sağlıyoruz. Proje kargoları, gabari dışı ağır yükler ve dökme maden/tahıl yüklemelerinde uzman operasyon ekibimiz saha gözetimi gerçekleştirir.', '["Proje Kargo & Ağır Yük Elleçleme Yönetimi", "Konteyner Lojistiği & Depolama Çözümleri", "Konşimento (Bill of Lading) & Ordino Düzenleme", "Gümrük Müşavirliği & Karayolu Tır Transferleri", "Gözetim (Surveying) & Yük Hasar Tespiti"]', 1, 5, NOW(), NOW()),
+(6, 'Teknik Sörvey & Bakım Onarım', 'teknik-survey-bakim-onarim', 'fa-wrench', '/images/svc_technical.jpg', 'Sualtı dalgıç temizliği, klas sörveyör koordinasyonu, yedek parça gümrüklemesi ve tersane temsilciliği.', 'Geminizin teknik aksaklıklarında veya periyodik bakım süreçlerinde sertifikalı uzman sualtı dalgıç ekipleri, makine mühendisleri ve klas sörveyörleri ile en hızlı çözümleri üretiyoruz. Yalova ve Tuzla tersanelerinde havuzlama (drydock) ve tamir aşamalarında armatör temsilciliği yürütüyoruz.', '["Sualtı (UWILD) Kamera & Dalgıç Tekne Temizliği", "Class Sörveyör Koordinasyonu (DNV, ABS, BV, NKK)", "Yedek Parça Transit Gümrükleme & Uçaktan Gemiye Teslimat", "Tuzla & Yalova Tersane (Drydock) Temsilciliği", "Yangın & Emniyet Ekipmanları Yıllık Test Sertifikasyon"]', 1, 6, NOW(), NOW())
+ON DUPLICATE KEY UPDATE `title`=VALUES(`title`);
+
+--
+-- Table structure for table `vessels`
+--
+CREATE TABLE IF NOT EXISTS `vessels` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `vessel_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `flag` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `imo_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL UNIQUE,
+  `grt` int(11) DEFAULT NULL,
+  `dwt` int(11) DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_port` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `operation_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `details` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `vessels`
+--
+INSERT INTO `vessels` (`id`, `name`, `vessel_type`, `flag`, `imo_number`, `grt`, `dwt`, `image`, `last_port`, `operation_type`, `status`, `details`, `created_at`, `updated_at`) VALUES
+(1, 'MV Bosphorus Express', 'Konteyner Gemisi', 'Marshall Islands', '9845123', 45200, 58000, '/images/vsl_container.jpg', 'Ambarlı Container Terminal', 'Liman İkmali & Acentelik', 'Tamamlandı', '3,400 TEU konteyner yükleme ve 120 ton VLSFO yakıt ikmali tamamlandı.', NOW(), NOW()),
+(2, 'MT Anatolian Pride', 'Ham Petrol Tankeri', 'Türkiye', '9712044', 82000, 115000, '/images/vsl_tanker.jpg', 'İstanbul Boğazı Kuzey Demir', 'Boğaz Geçişi & Bunkering', 'Devam Ediyor', 'Güney-Kuzey Boğaz geçiş kılavuz kaptan refakati ve demir sahası yedek parça teslimi.', NOW(), NOW()),
+(3, 'MV Danube Star', 'Dökme Yük Gemisi', 'Panama', '9631109', 34500, 56000, '/images/vsl_bulk.jpg', 'İzmit Körfezi Yılport', 'Tahliye & Mürettebat Değişimi', 'Tamamlandı', '45.000 ton buğday tahliyesi ve 6 kişilik Ukraynalı mürettebat değişimi başarıyla yapıldı.', NOW(), NOW()),
+(4, 'MV Orion Logistics', 'Ro-Ro Gemisi', 'Liberia', '9554321', 28900, 18000, '/images/vsl_roro.jpg', 'Pendik Ro-Ro Limanı', 'Araç Yükleme & Gümrük', 'Tamamlandı', '420 adet ticari araç ve 85 treyler yüklemesi sıfır hasar kaydıyla tamamlandı.', NOW(), NOW()),
+(5, 'MY Horizon Luxury', 'Süperyat / Superyacht', 'Cayman Islands', '9918765', 2400, 800, '/images/tugboat_1.jpg', 'Ataköy Marina & Boğaz Turu', 'Özel Yat Acenteliği', 'Tamamlandı', 'VIP konuk kabulü, yakıt ikmali ve özel Boğaz transit izni sağlandı.', NOW(), NOW())
+ON DUPLICATE KEY UPDATE `name`=VALUES(`name`);
+
+--
+-- Table structure for table `news`
+--
+CREATE TABLE IF NOT EXISTS `news` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL UNIQUE,
+  `category` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `summary` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `author` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_published` tinyint(1) NOT NULL DEFAULT 1,
+  `published_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `news`
+--
+INSERT INTO `news` (`id`, `title`, `slug`, `category`, `image`, `summary`, `content`, `author`, `is_published`, `published_at`, `created_at`, `updated_at`) VALUES
+(1, 'Türk Boğazları Deniz Trafik Düzeni Tüzüğü Güncellendi', 'turk-bogazlari-deniz-trafik-duzeni-tuzugu-guncellendi', 'Denizcilik Sirküleri', '/images/news_rules.jpg', 'Ulaştırma ve Altyapı Bakanlığı tarafından yayınlanan yeni tüzük ile İstanbul ve Çanakkale boğazı geçiş kurallarında güncellemeler yapıldı.', 'Kıyı Emniyeti Genel Müdürlüğü ve Ulaştırma Bakanlığı kararı uyarınca Türk Boğazları Deniz Trafik Düzeni Yönetmeliği\'nde yapılan son değişiklikler yürürlüğe girdi. Yeni düzenlemeye göre 200 metre üzerindeki tehlikeli madde taşıyan tankerlerin gece geçiş kısıtlamaları ve kılavuz kaptan alma zorunlulukları yeniden yapılandırıldı. NAVEXMAR olarak tüm armatör ve kiracılarımıza SP-1 bildirim süresi ve VHF kanal takip prosedürlerine dair bilgilendirme sirkülerimizi ilettik.', 'NAVEXMAR Mevzuat Departmanı', 1, NOW(), NOW(), NOW()),
+(2, 'Ambarlı Liman Başkanlığı Su Çekimi (Draft) Limitleri Açıklandı', 'ambarli-liman-baskanligi-su-cekimi-draft-limitleri', 'Liman Duyuruları', '/images/news_limits.jpg', 'Marport ve Kumport yanaşma rıhtımlarında mevsimsel dip çamuru ve derinlik güncellemelerine ilişkin yeni maksimum azami su çekim cetveli.', 'Ambarlı Liman Başkanlığı tarafından yayımlanan 2026/04 sayılı sirküler ile Ambarlı Liman Kompleksi bünyesindeki Marport, Kumport ve Mardaş rıhtımlarının azami yanaşma draft limitleri yeniden belirlenmiştir. Buna göre 1. Rıhtım için azami su çekimi 14.50 metreye çıkarılmıştır. Gemilerinizin fribort ve draft hesaplamalarında güncel cetvele dikkat edilmesi rica olunur.', 'NAVEXMAR Operasyon Masası', 1, NOW(), NOW(), NOW()),
+(3, 'NAVEXMAR Yeşil Denizcilik ve Karbon Emisyon Danışmanlığı Hizmete Girdi', 'navexmar-yesil-denizcilik-ve-karbon-emisyon-danismanligi', 'Sektörel Gelişmeler', '/images/news_green.jpg', 'IMO CII ve EU ETS karbon düzenlemeleri kapsamında gemilerinizin liman emisyon hesaplamaları ve sürdürülebilirlik raporlaması.', 'Uluslararası Denizcilik Örgütü (IMO) ve Avrupa Birliği\'nin sıfır karbon hedefleri doğrultusunda denizcilik sektörü köklü bir değişimden geçmektedir. NAVEXMAR Yeşil Denizcilik Masası, Türk Boğazları geçişi ve Türkiye limanları uğraklarında gemilerinizin yakıt tüketimi, emisyon salınımı ve biyolojik arıtma sistemlerinin uluslararası standartlara uyumunu kontrol ederek yeşil sertifikasyon sürecine katkı sağlamaktadır.', 'NAVEXMAR Teknik Direktörlük', 1, NOW(), NOW(), NOW())
+ON DUPLICATE KEY UPDATE `title`=VALUES(`title`);
+
+--
+-- Table structure for table `quote_requests`
+--
+CREATE TABLE IF NOT EXISTS `quote_requests` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `company_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `service_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `vessel_details` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `port_or_strait` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `operation_date` date DEFAULT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pending',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `contact_messages`
+--
+CREATE TABLE IF NOT EXISTS `contact_messages` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subject` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `is_read` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `site_settings`
+--
+CREATE TABLE IF NOT EXISTS `site_settings` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL UNIQUE,
+  `value` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `site_settings`
+--
+INSERT INTO `site_settings` (`key`, `value`, `created_at`, `updated_at`) VALUES
+('site_name', 'NAVEXMAR Maritime Agency', NOW(), NOW()),
+('phone', '+90 530 379 31 33', NOW(), NOW()),
+('mobile', '+90 544 401 21 86', NOW(), NOW()),
+('email', 'agency@navexmar.com olcay@navexmar.com burak@navexmar.com', NOW(), NOW()),
+('ops_email', 'agency@navexmar.com olcay@navexmar.com burak@navexmar.com', NOW(), NOW()),
+('address', 'Numune Evler Mah/Sahil 1 Nolu Sok/no2/Dörtyol/Hatay', NOW(), NOW()),
+('about_short', 'NAVEXMAR, Türk Boğazları ve tüm Türkiye limanlarında 7/24 uluslararası gemi acenteliği, ikmal, teknik destek ve lojistik hizmetleri vermektedir.', NOW(), NOW()),
+('page_about_active', '1', NOW(), NOW()),
+('page_services_active', '1', NOW(), NOW()),
+('page_news_active', '0', NOW(), NOW()),
+('page_contact_active', '1', NOW(), NOW())
+ON DUPLICATE KEY UPDATE `value`=VALUES(`value`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
