@@ -221,9 +221,9 @@ textarea.form-control { resize: vertical; min-height: 120px; }
                         <div class="form-group">
                             <label class="form-label">{{ __t('Hizmet / Operasyon Tipi', 'Service / Operation') }}</label>
                             <select name="subject" class="form-control">
-                                <option value="Akdeniz Terminal Acenteliği">{{ __t('Akdeniz Terminal Acenteliği (İskenderun, Ceyhan, Mersin vb.)', 'Mediterranean Terminal Agency') }}</option>
-                                <option value="Liman Acenteliği">{{ __t('Liman Acenteliği (İskenderun, Mersin, Antalya vb.)', 'Port Agency Attendance') }}</option>
-                                <option value="Bunkering / Kumanya">{{ __t('Bunkering & Yakıt İkmali', 'Bunkering & Provisions') }}</option>
+                                <option value="İskenderun Limanı Acenteliği">{{ __t('İskenderun Limanı & Terminal Acenteliği', 'Iskenderun Port & Terminal Agency') }}</option>
+                                <option value="Mersin Limanı Acenteliği">{{ __t('Mersin & Akdeniz Liman Acenteliği', 'Mersin & Mediterranean Port Agency') }}</option>
+                                <option value="Bunkering / Kumanya">{{ __t('Bunkering & Yakıt / Kumanya İkmali', 'Bunkering & Provisions') }}</option>
                                 <option value="Mürettebat Değişimi">{{ __t('Mürettebat Değişimi & Lojistik', 'Crew Change & Shore Logistics') }}</option>
                                 <option value="Diğer">{{ __t('Diğer Özel Talep', 'Other Special Request') }}</option>
                             </select>
