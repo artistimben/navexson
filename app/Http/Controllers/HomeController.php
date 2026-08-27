@@ -58,6 +58,9 @@ class HomeController extends Controller
 
     public function about()
     {
+        if (SiteSetting::get('page_about_active', '1') !== '1') {
+            abort(404);
+        }
         return view('about');
     }
 

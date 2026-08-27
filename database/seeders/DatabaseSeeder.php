@@ -246,12 +246,16 @@ class DatabaseSeeder extends Seeder
         // 5. Seed Site Settings
         $settings = [
             'site_name' => 'NAVEXMAR Maritime Agency',
-            'phone' => '+90 (212) 444 62 83',
-            'mobile' => '+90 (532) 700 90 90',
-            'email' => 'agency@navexmar.com',
-            'ops_email' => 'ops@navexmar.com',
-            'address' => 'Marport Plaza Kat:8, Ambarlı Liman Yolu, Avcılar / İstanbul',
+            'phone' => '+90 530 379 31 33',
+            'mobile' => '+90 544 401 21 86',
+            'email' => 'agency@navexmar.com olcay@navexmar.com burak@navexmar.com',
+            'ops_email' => 'agency@navexmar.com olcay@navexmar.com burak@navexmar.com',
+            'address' => 'Numune Evler Mah/Sahil 1 Nolu Sok/no2/Dörtyol/Hatay',
             'about_short' => 'NAVEXMAR, Türk Boğazları ve tüm Türkiye limanlarında 7/24 uluslararası gemi acenteliği, ikmal, teknik destek ve lojistik hizmetleri vermektedir.',
+            'page_about_active' => '1',
+            'page_services_active' => '1',
+            'page_news_active' => '0',
+            'page_contact_active' => '1',
         ];
 
         foreach ($settings as $key => $val) {

@@ -59,6 +59,33 @@
                 <textarea name="hero_desc" class="admin-form-control" rows="2">{{ old('hero_desc', $settings['hero_desc'] ?? 'İstanbul ve Çanakkale Boğazlarından Türkiye limanlarına — 18 yıllık deneyimle 7/24 profesyonel acentelik.') }}</textarea>
             </div>
 
+            {{-- Sayfa Yönetimi --}}
+            <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--adm-primary); margin: 28px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--adm-border);">
+                <i class="fa-solid fa-file-lines"></i> Sayfa Aktiflik Yönetimi
+            </h4>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 28px;">
+                <div class="admin-form-group">
+                    <label class="admin-form-label" style="display: flex; align-items: center; gap: 8px; cursor: pointer; color: var(--adm-primary);">
+                        <input type="checkbox" name="page_about_active" value="1" {{ ($settings['page_about_active'] ?? '1') == '1' ? 'checked' : '' }} style="width: auto;"> Hakkımızda Sayfası
+                    </label>
+                </div>
+                <div class="admin-form-group">
+                    <label class="admin-form-label" style="display: flex; align-items: center; gap: 8px; cursor: pointer; color: var(--adm-primary);">
+                        <input type="checkbox" name="page_services_active" value="1" {{ ($settings['page_services_active'] ?? '1') == '1' ? 'checked' : '' }} style="width: auto;"> Hizmetler Sayfası
+                    </label>
+                </div>
+                <div class="admin-form-group">
+                    <label class="admin-form-label" style="display: flex; align-items: center; gap: 8px; cursor: pointer; color: var(--adm-primary);">
+                        <input type="checkbox" name="page_news_active" value="1" {{ ($settings['page_news_active'] ?? '1') == '1' ? 'checked' : '' }} style="width: auto;"> Haberler Sayfası
+                    </label>
+                </div>
+                <div class="admin-form-group">
+                    <label class="admin-form-label" style="display: flex; align-items: center; gap: 8px; cursor: pointer; color: var(--adm-primary);">
+                        <input type="checkbox" name="page_contact_active" value="1" {{ ($settings['page_contact_active'] ?? '1') == '1' ? 'checked' : '' }} style="width: auto;"> İletişim Sayfası
+                    </label>
+                </div>
+            </div>
+
             {{-- Sosyal Medya --}}
             <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--adm-primary); margin: 28px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--adm-border);">
                 <i class="fa-solid fa-share-nodes"></i> Sosyal Medya Bağlantıları

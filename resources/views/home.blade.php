@@ -34,7 +34,8 @@
 
 .hm-hero-layout {
     position: relative; z-index: 2;
-    display: grid; grid-template-columns: 1fr 380px;
+    display: grid; grid-template-columns: 1fr;
+    max-width: 800px;
     gap: 48px; align-items: center;
     padding: 70px 0;
 }
@@ -80,66 +81,9 @@
 .hm-stat-num span { color: var(--cyan); }
 .hm-stat-lbl { font-size: 0.76rem; color: rgba(255, 255, 255, 0.6); margin-top: 5px; font-weight: 600; }
 
-/* Right Telemetry Card */
-.hm-telemetry-card {
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(16px);
-    border-radius: 20px; padding: 28px;
-    box-shadow: 0 24px 48px rgba(3, 13, 27, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-}
 
-.hm-card-head {
-    font-size: 0.78rem; font-weight: 800;
-    text-transform: uppercase; letter-spacing: 1px;
-    color: var(--muted); margin-bottom: 18px;
-    display: flex; align-items: center; justify-content: space-between;
-}
 
-.hm-tel-row {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 12px 0; border-bottom: 1px solid var(--border); gap: 12px;
-}
-.hm-tel-row:last-child { border-bottom: none; }
 
-.hm-vsl-name { font-size: 0.9rem; font-weight: 800; color: var(--navy); }
-.hm-vsl-route { font-size: 0.76rem; color: var(--muted); margin-top: 2px; }
-
-.hm-vsl-pill {
-    font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 6px; white-space: nowrap;
-}
-.hm-vsl-pill.in   { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
-.hm-vsl-pill.out  { background: #FFFBEB; color: #B45309; border: 1px solid #FDE68A; }
-.hm-vsl-pill.port { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
-
-/* ─── QUICK PDA CALCULATOR BANNER ─── */
-.hm-pda-bar {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 24px 32px;
-    margin-top: -40px;
-    position: relative; z-index: 10;
-    box-shadow: 0 12px 32px rgba(6, 24, 46, 0.1);
-}
-
-.hm-pda-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr) auto;
-    gap: 16px; align-items: center;
-}
-
-.hm-pda-field label {
-    display: block; font-size: 0.72rem; font-weight: 800;
-    color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;
-}
-
-.hm-pda-select, .hm-pda-input {
-    width: 100%; padding: 11px 14px;
-    border: 1px solid var(--border); border-radius: 8px;
-    font-size: 0.86rem; font-weight: 600; color: var(--text);
-    background: #F8FAFC; outline: none; transition: border-color 0.2s;
-}
-.hm-pda-select:focus, .hm-pda-input:focus { border-color: var(--blue); background: white; }
 
 /* ─── SERVICES SHOWCASE ─── */
 .svc-deck-grid {
@@ -274,14 +218,12 @@
 
 @media (max-width: 1024px) {
     .hm-hero-layout { grid-template-columns: 1fr; gap: 36px; }
-    .hm-pda-grid { grid-template-columns: 1fr 1fr; }
     .svc-deck-grid, .flt-preview-grid, .news-deck-grid { grid-template-columns: 1fr 1fr; }
     .ops-grid { grid-template-columns: 1fr 1fr; }
     .why-trust-grid { grid-template-columns: 1fr; gap: 36px; }
     .cta-banner { flex-direction: column; text-align: center; }
 }
 @media (max-width: 640px) {
-    .hm-pda-grid { grid-template-columns: 1fr; }
     .svc-deck-grid, .flt-preview-grid, .news-deck-grid, .ops-grid, .why-trust-cards { grid-template-columns: 1fr; }
 }
 </style>
@@ -300,7 +242,7 @@
                 
                 <div class="hm-hero-btns">
                     <a href="{{ route('contact') }}" class="btn-primary"><i class="fa-solid fa-file-invoice-dollar"></i> {{ __t('Proforma Teklif İste', 'Request Proforma Quote') }}</a>
-                    <a href="{{ route('straits-ports') }}" class="btn-outline-white"><i class="fa-solid fa-compass"></i> {{ __t('Boğaz & Liman Rehberi', 'Straits & Port Guide') }}</a>
+                    <a href="{{ route('about') }}" class="btn-outline-white"><i class="fa-solid fa-building"></i> {{ __t('Kurumsal Profil', 'Corporate Profile') }}</a>
                 </div>
 
                 <div class="hm-hero-stats">
@@ -311,78 +253,12 @@
                 </div>
             </div>
 
-            <!-- Right Telemetry Deck -->
-            <div class="hm-telemetry-card">
-                <div class="hm-card-head">
-                    <span><i class="fa-solid fa-satellite-dish" style="color:var(--blue);margin-right:6px;"></i> {{ __t('Canlı Operasyon Takibi', 'Live Telemetry Desk') }}</span>
-                    <span style="color:#10B981; font-weight:800; font-size:0.7rem;"><i class="fa-solid fa-circle" style="font-size:0.5rem;"></i> LIVE</span>
-                </div>
-                <div class="hm-tel-row">
-                    <div><div class="hm-vsl-name">MV ATLAS STAR</div><div class="hm-vsl-route">Ambarlı ➔ Bosphorus</div></div>
-                    <span class="hm-vsl-pill in">{{ __t('Giriş', 'Inbound') }}</span>
-                </div>
-                <div class="hm-tel-row">
-                    <div><div class="hm-vsl-name">MT GOLDEN WAVE</div><div class="hm-vsl-route">Dardanelles Strait</div></div>
-                    <span class="hm-vsl-pill out">{{ __t('Çıkış', 'Outbound') }}</span>
-                </div>
-                <div class="hm-tel-row">
-                    <div><div class="hm-vsl-name">BV MARMARA K</div><div class="hm-vsl-route">Haydarpaşa · Anchorage</div></div>
-                    <span class="hm-vsl-pill port">{{ __t('Limanda', 'At Port') }}</span>
-                </div>
-                <div class="hm-tel-row">
-                    <div><div class="hm-vsl-name">MV OLYMPIA</div><div class="hm-vsl-route">Kumport · Loading</div></div>
-                    <span class="hm-vsl-pill port">{{ __t('Limanda', 'At Port') }}</span>
-                </div>
-                <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border); font-size:0.76rem; color:var(--muted); font-weight:600;">
-                    <i class="fa-solid fa-shield-halved" style="color:var(--blue); margin-right:4px;"></i> {{ __t('VHF Ch 16 / 12 / 11 ile 7/24 Kesintisiz Takip', 'Monitored 24/7 on VHF Ch 16 / 12 / 11') }}
-                </div>
-            </div>
+
         </div>
     </div>
 </section>
 
-{{-- QUICK PDA BANNER --}}
-<div class="hm-container">
-    <div class="hm-pda-bar">
-        <form action="{{ route('contact') }}" method="GET" class="hm-pda-grid">
-            <div class="hm-pda-field">
-                <label>{{ __t('Uğrak Bölgesi', 'Call Region') }}</label>
-                <select name="region" class="hm-pda-select">
-                    <option value="Bosphorus">{{ __t('İstanbul Boğazı (Transit)', 'Bosphorus Transit') }}</option>
-                    <option value="Dardanelles">{{ __t('Çanakkale Boğazı (Transit)', 'Dardanelles Transit') }}</option>
-                    <option value="Ambarli">{{ __t('Ambarlı Limanı', 'Ambarli Port') }}</option>
-                    <option value="Izmit">{{ __t('İzmit Körfezi Limanları', 'Izmit Bay Ports') }}</option>
-                </select>
-            </div>
-            <div class="hm-pda-field">
-                <label>{{ __t('Gemi Tipi', 'Vessel Type') }}</label>
-                <select name="vessel_type" class="hm-pda-select">
-                    <option value="Container">{{ __t('Konteyner Gemisi', 'Container Ship') }}</option>
-                    <option value="Tanker">{{ __t('Petrol / Kimyasal Tanker', 'Oil/Chemical Tanker') }}</option>
-                    <option value="Bulk">{{ __t('Dökme Yük Gemisi', 'Bulk Carrier') }}</option>
-                    <option value="General Cargo">{{ __t('Genel Yük Gemisi', 'General Cargo') }}</option>
-                </select>
-            </div>
-            <div class="hm-pda-field">
-                <label>{{ __t('Tonaj (GRT)', 'Gross Tonnage (GRT)') }}</label>
-                <input type="number" name="grt" placeholder="Örn: 24500" class="hm-pda-input">
-            </div>
-            <div class="hm-pda-field">
-                <label>{{ __t('Hizmet Türü', 'Service Type') }}</label>
-                <select name="service_type" class="hm-pda-select">
-                    <option value="Agency">{{ __t('Tam Acentelik Hizmeti', 'Full Agency Clearance') }}</option>
-                    <option value="Bunkering">{{ __t('Bunkering & İkmal', 'Bunkering & Supply') }}</option>
-                    <option value="Crew">{{ __t('Mürettebat Değişimi', 'Crew Change') }}</option>
-                </select>
-            </div>
-            <div>
-                <button type="submit" class="btn-primary" style="padding:12px 20px; white-space:nowrap; margin-top:20px;">
-                    <i class="fa-solid fa-calculator"></i> {{ __t('PDA Hesabı Al', 'Get PDA Quote') }}
-                </button>
-            </div>
-        </form>
-    </div>
-</div>
+
 
 {{-- SERVICES SECTION --}}
 <section class="sec">
@@ -480,7 +356,7 @@
                 <div class="sec-label">{{ __t('Güven ve Şeffaflık', 'Trust & Transparency') }}</div>
                 <h2 class="sec-title">{{ __t('Neden Armatörler NAVEXMAR\'ı Tercih Ediyor?', 'Why Owners Choose NAVEXMAR?') }}</h2>
                 <p style="color:var(--muted); font-size:0.94rem; line-height:1.7; margin-bottom:24px;">
-                    {{ __t('18 yıllık tecrübemiz, BIMCO ve FONASBA üyeliklerimiz ve ISO 9001:2015 sertifikalı kalite yönetimimizle gemi uğraklarınızda sıfır hatayla hizmet sunuyoruz.', 'With 18 years of experience, BIMCO and FONASBA memberships, and ISO 9001:2015 quality management, we deliver zero-error agency attendance.') }}
+                    {{ __t('18 yıllık tecrübemiz ve BIMCO ile FONASBA üyeliklerimizle gemi uğraklarınızda sıfır hatayla hizmet sunuyoruz.', 'With 18 years of experience and BIMCO and FONASBA memberships, we deliver zero-error agency attendance.') }}
                 </p>
                 <a href="{{ route('about') }}" class="btn-primary"><i class="fa-solid fa-building"></i> {{ __t('Kurumsal Profilimizi İnceleyin', 'Explore Corporate Profile') }}</a>
             </div>
@@ -500,8 +376,8 @@
 
                 <div class="trust-card">
                     <div class="trust-icon"><i class="fa-solid fa-certificate"></i></div>
-                    <div class="trust-title">{{ __t('ISO 9001 Sertifikalı', 'ISO 9001 Certified') }}</div>
-                    <div class="trust-desc">{{ __t('TÜV Rheinland onaylı kalite ve emniyet yönetim sistemi.', 'TÜV Rheinland certified quality and maritime safety management system.') }}</div>
+                    <div class="trust-title">{{ __t('Uluslararası Standartlar', 'International Standards') }}</div>
+                    <div class="trust-desc">{{ __t('BIMCO ve FONASBA standartlarında yüksek kaliteli acentelik hizmetleri.', 'High quality shipping agency attendance in line with BIMCO and FONASBA standards.') }}</div>
                 </div>
 
                 <div class="trust-card">

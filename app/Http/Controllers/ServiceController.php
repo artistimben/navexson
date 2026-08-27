@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
 
@@ -10,6 +11,9 @@ class ServiceController extends Controller
 {
     public function index()
     {
+        if (SiteSetting::get('page_services_active', '1') !== '1') {
+            abort(404);
+        }
         $query = Service::query();
         if (Schema::hasTable('services')) {
             if (Schema::hasColumn('services', 'is_active')) {
@@ -28,6 +32,9 @@ class ServiceController extends Controller
 
     public function show($slug)
     {
+        if (SiteSetting::get('page_services_active', '1') !== '1') {
+            abort(404);
+        }
         $aliases = [
             'teknik-ve-makine-destegi' => 'teknik-survey-bakim-onarim',
         ];

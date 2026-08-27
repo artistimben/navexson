@@ -5,18 +5,25 @@ namespace App\Http\Controllers;
 use App\Models\ContactMessage;
 use App\Models\QuoteRequest;
 use App\Models\Service;
+use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
     public function index()
     {
+        if (SiteSetting::get('page_contact_active', '1') !== '1') {
+            abort(404);
+        }
         $services = Service::where('is_active', true)->get();
         return view('contact', compact('services'));
     }
 
     public function sendContact(Request $request)
     {
+        if (SiteSetting::get('page_contact_active', '1') !== '1') {
+            abort(404);
+        }
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
@@ -32,6 +39,9 @@ class ContactController extends Controller
 
     public function sendQuote(Request $request)
     {
+        if (SiteSetting::get('page_contact_active', '1') !== '1') {
+            abort(404);
+        }
         $validated = $request->validate([
             'company_name' => 'required|string|max:255',
             'contact_person' => 'required|string|max:255',

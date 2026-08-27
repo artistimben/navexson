@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
 
@@ -10,6 +11,9 @@ class NewsController extends Controller
 {
     public function index(Request $request)
     {
+        if (SiteSetting::get('page_news_active', '1') !== '1') {
+            abort(404);
+        }
         $query = News::query();
 
         if (Schema::hasColumn('news', 'is_published')) {
@@ -43,6 +47,9 @@ class NewsController extends Controller
 
     public function show($slug)
     {
+        if (SiteSetting::get('page_news_active', '1') !== '1') {
+            abort(404);
+        }
         $query = News::where('slug', $slug);
         if (Schema::hasColumn('news', 'is_published')) {
             $query->where('is_published', true);

@@ -31,12 +31,12 @@ Route::get('/lang/{locale}', [LanguageController::class, 'switch'])->name('lang.
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/hakkimizda', [HomeController::class, 'about'])->name('about');
-Route::get('/bogazlar-ve-limanlar', [HomeController::class, 'straitsAndPorts'])->name('straits-ports');
+
 
 Route::get('/hizmetlerimiz', [ServiceController::class, 'index'])->name('services.index');
 Route::get('/hizmetlerimiz/{slug}', [ServiceController::class, 'show'])->name('services.show');
 
-Route::get('/filomuz', [VesselController::class, 'index'])->name('vessels.index');
+
 
 Route::get('/haberler', [NewsController::class, 'index'])->name('news.index');
 Route::get('/haberler/{slug}', [NewsController::class, 'show'])->name('news.show');

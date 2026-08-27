@@ -395,11 +395,7 @@
                     <i class="fa-solid fa-anchor"></i> {{ __t('Hizmetler', 'Services') }}
                 </a>
             </li>
-            <li class="sidebar-item">
-                <a href="{{ route('admin.vessels.index') }}" class="sidebar-link {{ request()->routeIs('admin.vessels.*') ? 'active' : '' }}">
-                    <i class="fa-solid fa-ship"></i> {{ __t('Filomuz / Gemiler', 'Fleet / Vessels') }}
-                </a>
-            </li>
+
             <li class="sidebar-item">
                 <a href="{{ route('admin.news.index') }}" class="sidebar-link {{ request()->routeIs('admin.news.*') ? 'active' : '' }}">
                     <i class="fa-solid fa-newspaper"></i> {{ __t('Haber & Duyurular', 'News & Bulletins') }}
@@ -410,11 +406,7 @@
                     <i class="fa-solid fa-building"></i> {{ __t('Hakkımızda Sayfası', 'About Page') }}
                 </a>
             </li>
-            <li class="sidebar-item">
-                <a href="{{ route('admin.straits.index') }}" class="sidebar-link {{ request()->routeIs('admin.straits.*') ? 'active' : '' }}">
-                    <i class="fa-solid fa-compass"></i> {{ __t('Boğazlar & Limanlar', 'Straits & Ports') }}
-                </a>
-            </li>
+
             <li class="sidebar-item">
                 <a href="{{ route('admin.gallery.index') }}" class="sidebar-link {{ request()->routeIs('admin.gallery.*') ? 'active' : '' }}">
                     <i class="fa-solid fa-images"></i> {{ __t('Görsel Galerisi', 'Media Gallery') }}

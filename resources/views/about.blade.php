@@ -66,32 +66,10 @@
 }
 .stat-mini-lbl { font-size: 0.78rem; color: var(--muted); margin-top: 4px; font-weight:600; }
 
-/* Timeline */
-.timeline { position: relative; padding-left: 32px; }
-.timeline::before {
-    content: ''; position: absolute; left: 6px; top: 4px; bottom: 0;
-    width: 3px; background: linear-gradient(to bottom, var(--blue), transparent);
-    border-radius: 99px;
-}
-.tl-item { position: relative; margin-bottom: 32px; }
-.tl-item::before {
-    content: ''; position: absolute; left: -32px; top: 4px;
-    width: 13px; height: 13px;
-    background: var(--blue); border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.2);
-}
-.tl-year {
-    font-size: 0.74rem; font-weight: 800; color: var(--blue);
-    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;
-}
-.tl-title {
-    font-size: 1.02rem; font-weight: 800; color: var(--navy);
-    margin-bottom: 6px; font-family: 'Outfit', sans-serif;
-}
-.tl-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.65; }
+
 
 /* Team */
-.team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; justify-content: center; }
 .team-card {
     background: white; border: 1px solid var(--border);
     border-radius: 14px; padding: 28px;
@@ -123,6 +101,107 @@
 .cert-icon { font-size: 1.8rem; color: var(--blue); margin-bottom: 12px; }
 .cert-name { font-size: 0.88rem; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
 .cert-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.5; }
+
+/* Acronym Values */
+.acronym-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-top: 36px;
+}
+.acronym-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px 20px;
+    text-align: center;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(6, 24, 46, 0.03);
+}
+.acronym-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(6, 24, 46, 0.08);
+    border-color: #90CAF9;
+}
+.acronym-letter {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 12px;
+}
+.acronym-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text);
+}
+@media (max-width: 768px) {
+    .acronym-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 480px) {
+    .acronym-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Perspective Section */
+.perspective-section {
+    background: #F8FAFC;
+    padding: 60px 0;
+}
+.perspective-text {
+    max-width: 800px;
+    margin: 0 auto 48px;
+    text-align: center;
+    font-size: 0.96rem;
+    color: var(--muted);
+    line-height: 1.8;
+}
+.perspective-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.perspective-card {
+    background: #EDF2F7;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.25s ease;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+.perspective-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+    border-color: #90CAF9;
+}
+.perspective-icon {
+    font-size: 2.2rem;
+    color: var(--navy);
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.perspective-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 14px;
+}
+.perspective-card p {
+    font-size: 0.86rem;
+    color: var(--muted);
+    line-height: 1.65;
+}
+@media (max-width: 900px) {
+    .perspective-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
 
 @media (max-width:900px) {
     .abt-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -179,10 +258,10 @@
             <div class="abt-img-wrap">
                 <img src="/images/about_corporate.jpg" alt="NAVEXMAR Office" loading="lazy">
                 <div class="abt-badge">
-                    <div class="abt-badge-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="abt-badge-icon"><i class="fa-solid fa-clock"></i></div>
                     <div>
-                        <strong>ISO 9001:2015</strong>
-                        <span>{{ __t('Sertifikalı Kalite Yönetimi', 'Certified Quality Management') }}</span>
+                        <strong>7/24 Kesintisiz</strong>
+                        <span>{{ __t('Liman & Boğaz Acenteliği', 'Straits & Port Agency') }}</span>
                     </div>
                 </div>
             </div>
@@ -190,41 +269,77 @@
     </div>
 </section>
 
-{{-- ZAMAN CIZELGESI / TIMELINE --}}
-<section class="sec sec-alt">
+{{-- FARKLI BIR BAKIS ACISI / PERSPECTIVE --}}
+<section class="sec perspective-section">
     <div class="container abt-container">
-        <div style="text-align:center; margin-bottom:48px;">
-            <div class="sec-label" style="justify-content:center;">{{ __t('Tarihçemiz', 'Our History') }}</div>
-            <h2 class="sec-title">{{ __t('Başarılarla Dolu Yolculuğumuz', 'Our Journey of Success') }}</h2>
+        <div style="text-align:center; margin-bottom:24px;">
+            <h2 class="sec-title" style="font-size:clamp(1.8rem, 3.5vw, 2.8rem); color:var(--navy); font-weight:900;">
+                {{ __t('Farklı Bir Bakış Açısı', 'A Different Perspective') }}
+            </h2>
+        </div>
+        
+        <p class="perspective-text">
+            {{ __t('Navexmar, sektördeki diğer firmalardan farklı bir yaklaşımla gemi bakım ve uluslararası ticaret hizmetleri sunan bir şirkettir. Kuruluşumuzdan bu yana, insan odaklı, tüm ortaklarimizi kapsayan ve her yönüyle entegre bir şirket olmaya çalışıyoruz. Müşterilerimize en iyi hizmeti sunmak için sürekli gelişim ve yenilikçilik ilkelerimizle hareket ediyoruz.', 'Navexmar is a company that offers vessel maintenance and international trade services with a different approach from other firms in the sector. Since our establishment, we strive to be a human-centered, inclusive, and fully integrated company. We act with our principles of continuous development and innovation to offer the best service to our customers.') }}
+        </p>
+
+        <div class="perspective-grid">
+            <div class="perspective-card">
+                <div class="perspective-icon"><i class="fa-solid fa-users"></i></div>
+                <h3>{{ __t('İnsan Odaklı', 'Human Centered') }}</h3>
+                <p>
+                    {{ __t('Çalışanlarımız ve iş ortaklarımızla kurduğumuz güçlü ilişkiler, başarımızın temel taşıdır. Her bireyin değerini bilir ve onların gelişimine katkıda bulunuruz.', 'The strong relationships we build with our employees and business partners are the cornerstone of our success. We know the value of each individual and contribute to their development.') }}
+                </p>
+            </div>
+
+            <div class="perspective-card">
+                <div class="perspective-icon"><i class="fa-solid fa-handshake"></i></div>
+                <h3>{{ __t('Kapsayıcı Ortaklık', 'Inclusive Partnership') }}</h3>
+                <p>
+                    {{ __t('Tüm paydaşlarımızı sürece dahil eder, şeffaf ve dürüst bir iletişim ile uzun vadeli ortaklıklar kurarız. Birlikte başarıya ulaşma inancıyla hareket ederiz.', 'We include all stakeholders in the process and establish long-term partnerships with transparent and honest communication. We act with the belief of achieving success together.') }}
+                </p>
+            </div>
+
+            <div class="perspective-card">
+                <div class="perspective-icon"><i class="fa-solid fa-gears"></i></div>
+                <h3>{{ __t('Entegre Çözümler', 'Integrated Solutions') }}</h3>
+                <p>
+                    {{ __t('Her yönüyle entegre sistemlerimiz sayesinde müşterilerimize kapsamlı ve kesintisiz hizmet sunuyoruz. Tek noktadan tüm ihtiyaçlarınıza çözüm üretiyoruz.', 'Thanks to our fully integrated systems, we offer comprehensive and uninterrupted service to our customers. We produce solutions for all your needs from a single point.') }}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{{-- MARKAMIZ / DEGERLERIMIZ --}}
+<section class="sec">
+    <div class="container abt-container">
+        <div style="text-align:center; margin-bottom:40px;">
+            <div class="sec-label" style="justify-content:center;">{{ __t('Değerlerimiz', 'Our Values') }}</div>
+            <h2 class="sec-title">{{ __t('NAVEX Marka Kimliğimiz ve Değerlerimiz', 'NAVEX Brand Identity & Values') }}</h2>
         </div>
 
-        <div style="max-width:800px; margin:0 auto;">
-            <div class="timeline">
-                <div class="tl-item">
-                    <div class="tl-year">2008</div>
-                    <div class="tl-title">{{ __t('NAVEXMAR Kuruldu', 'NAVEXMAR Founded') }}</div>
-                    <div class="tl-desc">{{ __t('İstanbul Ambarlı merkezli olarak Türk Boğazları geçiş acenteliği hizmetlerine başlandı.', 'Commenced Bosphorus transit shipping agency operations based in Istanbul Ambarli.') }}</div>
-                </div>
-                <div class="tl-item">
-                    <div class="tl-year">2012</div>
-                    <div class="tl-title">{{ __t('Liman Ağı Genişletildi', 'Port Network Expansion') }}</div>
-                    <div class="tl-desc">{{ __t('İzmit Körfezi (Evyap, Yılport, DP World) ve Aliağa limanlarında doğrudan acentelik ofisleri faaliyete geçti.', 'Direct agency branch offices opened in Izmit Bay and Aliaga ports.') }}</div>
-                </div>
-                <div class="tl-item">
-                    <div class="tl-year">2016</div>
-                    <div class="tl-title">{{ __t('BIMCO & FONASBA Üyeliği', 'BIMCO & FONASBA Membership') }}</div>
-                    <div class="tl-desc">{{ __t('Uluslararası denizcilik örgütlerine tam üyelik sağlanarak hizmet standartları global seviyeye taşındı.', 'Achieved full membership in global shipping organizations, upgrading service quality.') }}</div>
-                </div>
-                <div class="tl-item">
-                    <div class="tl-year">2020</div>
-                    <div class="tl-title">{{ __t('7/24 Dijital Operasyon Masası', '24/7 Digital Operations Desk') }}</div>
-                    <div class="tl-desc">{{ __t('Anlık gemi takibi, dijital DA/CA proforma hesaplayıcı ve canlı bildirim sistemine geçildi.', 'Launched real-time vessel tracking, digital DA/CA calculator and live notification telemetry.') }}</div>
-                </div>
-                <div class="tl-item">
-                    <div class="tl-year">2024</div>
-                    <div class="tl-title">{{ __t('Yeşil Denizcilik Masası', 'Green Shipping Desk') }}</div>
-                    <div class="tl-desc">{{ __t('IMO CII ve EU ETS karbon emisyon danışmanlığı ile çevre dostu acentelik hizmeti başlatıldı.', 'Launched eco-friendly shipping agency with IMO CII and EU ETS carbon compliance consulting.') }}</div>
-                </div>
+        <div class="acronym-grid">
+            <div class="acronym-card">
+                <div class="acronym-letter">N</div>
+                <div class="acronym-title">{{ __t('Navigasyon', 'Navigation') }}</div>
+            </div>
+            <div class="acronym-card">
+                <div class="acronym-letter">A</div>
+                <div class="acronym-title">{{ __t('Azimli', 'Determined') }}</div>
+            </div>
+            <div class="acronym-card">
+                <div class="acronym-letter">V</div>
+                <div class="acronym-title">{{ __t('Verimli', 'Efficient') }}</div>
+            </div>
+            <div class="acronym-card">
+                <div class="acronym-letter">E</div>
+                <div class="acronym-title">{{ __t('Enerjik', 'Energetic') }}</div>
+            </div>
+            <div class="acronym-card">
+                <div class="acronym-letter">X</div>
+                <div class="acronym-title">{{ __t('Mükemmel', 'eXcellent') }}</div>
             </div>
         </div>
     </div>
@@ -240,22 +355,16 @@
 
         <div class="team-grid">
             <div class="team-card">
-                <div class="team-avatar"><i class="fa-solid fa-user-tie"></i></div>
-                <div class="team-name">Kpt. Ahsen Boz</div>
-                <div class="team-role">{{ __t('Kurucu & Genel Müdür', 'Founder & Managing Director') }}</div>
-                <div class="team-bio">{{ __t('25 yıllık uzak yol kaptanlığı ve deniz acenteliği tecrübesiyle şirketin stratejik liderliğini yürütmektedir.', 'Leading company strategy with 25 years master mariner and shipping agency experience.') }}</div>
+                <div class="team-avatar"><i class="fa-solid fa-anchor"></i></div>
+                <div class="team-name">Burak Arıkan</div>
+                <div class="team-role">{{ __t('Liman Operasyon Müdürü', 'Port Operations Manager') }}</div>
+                <div class="team-bio">{{ __t('Liman hizmetleri, yükleme-tahliye operasyonları ve yerel acentelik süreçlerinin yönetimini üstlenmektedir.', 'Manages port services, loading-discharging operations, and local agency processes.') }}</div>
             </div>
             <div class="team-card">
-                <div class="team-avatar"><i class="fa-solid fa-compass-drafting"></i></div>
-                <div class="team-name">Kpt. Erdem Demir</div>
-                <div class="team-role">{{ __t('Operasyon Direktörü', 'Operations Director') }}</div>
-                <div class="team-bio">{{ __t('Türk Boğazları transit geçişleri ve liman idareleri koordinasyonunu 7/24 sevk ve idare etmektedir.', 'Directing Bosphorus transit clearances and port authority logistics 24/7.') }}</div>
-            </div>
-            <div class="team-card">
-                <div class="team-avatar"><i class="fa-solid fa-shield-halved"></i></div>
-                <div class="team-name">Elif Soylu</div>
-                <div class="team-role">{{ __t('Mevzuat & Kalite Müdürü', 'Regulatory & Quality Manager') }}</div>
-                <div class="team-bio">{{ __t('Gümrük, Sahil Sağlık, liman izinleri ve ISO 9001 kalite standartlarının uygulanmasından sorumludur.', 'Responsible for customs, health clearance, port permits and ISO 9001 compliance.') }}</div>
+                <div class="team-avatar"><i class="fa-solid fa-route"></i></div>
+                <div class="team-name">Olcay Çakıcı</div>
+                <div class="team-role">{{ __t('Boğaz Operasyon Müdürü', 'Straits Operations Manager') }}</div>
+                <div class="team-bio">{{ __t('İstanbul ve Çanakkale boğazlarından transit geçiş yapan gemilerin operasyonel koordinasyonunu sağlamaktadır.', 'Provides operational coordination for vessels transiting the Turkish Straits.') }}</div>
             </div>
         </div>
     </div>
@@ -280,11 +389,7 @@
                 <div class="cert-name">FONASBA</div>
                 <div class="cert-desc">{{ __t('Dünya Gemi Acenteleri Dernekleri Federasyonu Standardı', 'Federation of National Associations of Ship Brokers Standard') }}</div>
             </div>
-            <div class="cert-card">
-                <div class="cert-icon"><i class="fa-solid fa-shield-check"></i></div>
-                <div class="cert-name">ISO 9001:2015</div>
-                <div class="cert-desc">{{ __t('TÜV Rheinland Onaylı Kalite Yönetim Sistemi', 'TÜV Rheinland Certified Quality Management System') }}</div>
-            </div>
+
             <div class="cert-card">
                 <div class="cert-icon"><i class="fa-solid fa-anchor"></i></div>
                 <div class="cert-name">DTO Üyesi</div>

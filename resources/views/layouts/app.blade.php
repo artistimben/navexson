@@ -498,12 +498,18 @@
 
         <ul class="nav-links">
             <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">{{ __t('Ana Sayfa', 'Home') }}</a></li>
+            @if(\App\Models\SiteSetting::get('page_about_active', '1') == '1')
             <li><a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">{{ __t('Hakkımızda', 'About Us') }}</a></li>
+            @endif
+            @if(\App\Models\SiteSetting::get('page_services_active', '1') == '1')
             <li><a href="{{ route('services.index') }}" class="{{ request()->routeIs('services.*') ? 'active' : '' }}">{{ __t('Hizmetler', 'Services') }}</a></li>
-            <li><a href="{{ route('straits-ports') }}" class="{{ request()->routeIs('straits-ports') ? 'active' : '' }}">{{ __t('Boğazlar & Limanlar', 'Straits & Ports') }}</a></li>
-            <li><a href="{{ route('vessels.index') }}" class="{{ request()->routeIs('vessels.*') ? 'active' : '' }}">{{ __t('Filomuz', 'Fleet') }}</a></li>
+            @endif
+            @if(\App\Models\SiteSetting::get('page_news_active', '1') == '1')
             <li><a href="{{ route('news.index') }}" class="{{ request()->routeIs('news.*') ? 'active' : '' }}">{{ __t('Haberler', 'News') }}</a></li>
+            @endif
+            @if(\App\Models\SiteSetting::get('page_contact_active', '1') == '1')
             <li><a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'active' : '' }}">{{ __t('İletişim', 'Contact') }}</a></li>
+            @endif
         </ul>
 
         <div style="display:flex;align-items:center;gap:10px;">
@@ -532,12 +538,18 @@
 
     <ul class="mob-links">
         <li><a href="{{ route('home') }}"><i class="fa-solid fa-house fa-fw"></i> {{ __t('Ana Sayfa', 'Home') }}</a></li>
+        @if(\App\Models\SiteSetting::get('page_about_active', '1') == '1')
         <li><a href="{{ route('about') }}"><i class="fa-solid fa-building fa-fw"></i> {{ __t('Hakkımızda', 'About Us') }}</a></li>
+        @endif
+        @if(\App\Models\SiteSetting::get('page_services_active', '1') == '1')
         <li><a href="{{ route('services.index') }}"><i class="fa-solid fa-anchor fa-fw"></i> {{ __t('Hizmetler', 'Services') }}</a></li>
-        <li><a href="{{ route('straits-ports') }}"><i class="fa-solid fa-compass fa-fw"></i> {{ __t('Boğazlar & Limanlar', 'Straits & Ports') }}</a></li>
-        <li><a href="{{ route('vessels.index') }}"><i class="fa-solid fa-ship fa-fw"></i> {{ __t('Filomuz', 'Fleet') }}</a></li>
+        @endif
+        @if(\App\Models\SiteSetting::get('page_news_active', '1') == '1')
         <li><a href="{{ route('news.index') }}"><i class="fa-solid fa-newspaper fa-fw"></i> {{ __t('Haberler', 'News') }}</a></li>
+        @endif
+        @if(\App\Models\SiteSetting::get('page_contact_active', '1') == '1')
         <li><a href="{{ route('contact') }}"><i class="fa-solid fa-phone fa-fw"></i> {{ __t('İletişim', 'Contact') }}</a></li>
+        @endif
     </ul>
     <a href="{{ route('contact') }}" class="btn-primary" style="width:100%;justify-content:center;margin-top:24px;">
         <i class="fa-solid fa-file-invoice-dollar"></i> {{ __t('Teklif Al', 'Get Quote') }}
@@ -562,7 +574,6 @@
                 <div class="footer-certs">
                     <span class="footer-cert">BIMCO {{ __t('Üyesi', 'Member') }}</span>
                     <span class="footer-cert">FONASBA</span>
-                    <span class="footer-cert">ISO 9001:2015</span>
                     <span class="footer-cert">DTO {{ __t('Üyesi', 'Member') }}</span>
                 </div>
             </div>
@@ -571,12 +582,18 @@
                 <h5>{{ __t('Hızlı Bağlantılar', 'Quick Links') }}</h5>
                 <ul class="footer-nav">
                     <li><a href="{{ route('home') }}"><i class="fa-solid fa-chevron-right"></i> {{ __t('Ana Sayfa', 'Home') }}</a></li>
+                    @if(\App\Models\SiteSetting::get('page_about_active', '1') == '1')
                     <li><a href="{{ route('about') }}"><i class="fa-solid fa-chevron-right"></i> {{ __t('Hakkımızda', 'About Us') }}</a></li>
+                    @endif
+                    @if(\App\Models\SiteSetting::get('page_services_active', '1') == '1')
                     <li><a href="{{ route('services.index') }}"><i class="fa-solid fa-chevron-right"></i> {{ __t('Hizmetlerimiz', 'Services') }}</a></li>
-                    <li><a href="{{ route('straits-ports') }}"><i class="fa-solid fa-chevron-right"></i> {{ __t('Boğazlar & Limanlar', 'Straits & Ports') }}</a></li>
-                    <li><a href="{{ route('vessels.index') }}"><i class="fa-solid fa-chevron-right"></i> {{ __t('Filomuz', 'Fleet') }}</a></li>
+                    @endif
+                    @if(\App\Models\SiteSetting::get('page_news_active', '1') == '1')
                     <li><a href="{{ route('news.index') }}"><i class="fa-solid fa-chevron-right"></i> {{ __t('Haberler', 'News') }}</a></li>
+                    @endif
+                    @if(\App\Models\SiteSetting::get('page_contact_active', '1') == '1')
                     <li><a href="{{ route('contact') }}"><i class="fa-solid fa-chevron-right"></i> {{ __t('İletişim', 'Contact') }}</a></li>
+                    @endif
                 </ul>
             </div>
 
