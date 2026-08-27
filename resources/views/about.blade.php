@@ -331,22 +331,22 @@
 <section class="sec">
     <div class="container abt-container">
         <div style="text-align:center; margin-bottom:48px;">
-            <div class="sec-label" style="justify-content:center;">{{ __t('Yönetim Kadromuz', 'Executive Team') }}</div>
-            <h2 class="sec-title">{{ __t('Uzman Kaptanlar ve Denizcilik Profesyonelleri', 'Master Captains & Maritime Professionals') }}</h2>
+            <div class="sec-label" style="justify-content:center;">{{ __t('Ekibimiz', 'Our Team') }}</div>
+            <h2 class="sec-title">{{ __t('Yönetim Kadromuz', 'Executive Team') }}</h2>
         </div>
 
         <div class="team-grid">
-            <div class="team-card">
-                <div class="team-avatar"><i class="fa-solid fa-anchor"></i></div>
-                <div class="team-name">Burak Arıkan</div>
-                <div class="team-role">{{ __t('Liman Operasyon Müdürü', 'Port Operations Manager') }}</div>
-                <div class="team-bio">{{ __t('Liman hizmetleri, yükleme-tahliye operasyonları ve yerel acentelik süreçlerinin yönetimini üstlenmektedir.', 'Manages port services, loading-discharging operations, and local agency processes.') }}</div>
-            </div>
             <div class="team-card">
                 <div class="team-avatar"><i class="fa-solid fa-route"></i></div>
                 <div class="team-name">Olcay Çakıcı</div>
                 <div class="team-role">{{ __t('Operasyon & Lojistik Müdürü', 'Operations & Logistics Manager') }}</div>
                 <div class="team-bio">{{ __t('İskenderun, Mersin ve Akdeniz limanlarında yanaşma, tahliye, ikmal ve lojistik operasyonlarının koordinasyonunu sağlamaktadır.', 'Provides operational coordination for berthing, discharge, supplies and logistics across Mediterranean ports.') }}</div>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar"><i class="fa-solid fa-anchor"></i></div>
+                <div class="team-name">Burak Arıkan</div>
+                <div class="team-role">{{ __t('Liman Operasyon Müdürü', 'Port Operations Manager') }}</div>
+                <div class="team-bio">{{ __t('Liman hizmetleri, yükleme-tahliye operasyonları ve yerel acentelik süreçlerinin yönetimini üstlenmektedir.', 'Manages port services, loading-discharging operations, and local agency processes.') }}</div>
             </div>
         </div>
     </div>
