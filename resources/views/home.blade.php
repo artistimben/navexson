@@ -390,18 +390,4 @@
     </div>
 </section>
 
-{{-- CONVERSION CTA BANNER --}}
-<div class="hm-container">
-    <div class="cta-banner">
-        <div>
-            <h3>{{ __t('Geminize Özel Proforma Liman Hesabı İster Misiniz?', 'Need a Custom Proforma PDA for Your Vessel?') }}</h3>
-            <p>{{ __t('İskenderun, Mersin, Antalya ve tüm liman uğraklarınız için 2 saat içinde detaylı proforma hesap (PDA) hazırlayalım.', 'Let us prepare a detailed proforma disbursement account (PDA) within 2 hours for your Iskenderun, Mersin, Antalya or any Turkish port call.') }}</p>
-        </div>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <a href="{{ route('contact') }}" class="btn-primary" style="background:white; color:var(--navy) !important;"><i class="fa-solid fa-paper-plane"></i> {{ __t('Teklif İste', 'Request Quote') }}</a>
-            <a href="tel:{{ \App\Models\SiteSetting::get('mobile', '+905327009090') }}" class="btn-outline-white"><i class="fa-solid fa-phone"></i> {{ \App\Models\SiteSetting::get('mobile', '+90 532 700 90 90') }}</a>
-        </div>
-    </div>
-</div>
-
 @endsection

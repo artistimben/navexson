@@ -609,10 +609,10 @@
 
             <div class="footer-col">
                 <h5>{{ __t('İletişim', 'Contact Us') }}</h5>
-                <div class="f-contact"><i class="fa-solid fa-location-dot"></i><span>{{ \App\Models\SiteSetting::get('address', 'Marport Plaza K:8, Ambarlı Liman Yolu, Avcılar — İstanbul') }}</span></div>
-                <div class="f-contact"><i class="fa-solid fa-phone"></i><span>{{ \App\Models\SiteSetting::get('phone', '+90 212 444 62 83') }}</span></div>
-                <div class="f-contact"><i class="fa-solid fa-mobile-screen"></i><span>{{ __t('Acil', 'Emergency') }}: {{ \App\Models\SiteSetting::get('mobile', '+90 532 700 90 90') }}</span></div>
-                <div class="f-contact"><i class="fa-solid fa-envelope"></i><span>{{ \App\Models\SiteSetting::get('email', 'ops@navexmar.com') }}</span></div>
+                <div class="f-contact"><i class="fa-solid fa-location-dot"></i><span>{{ \App\Models\SiteSetting::get('address', 'Numune Evler Mah/Sahil 1 Nolu Sok/no2/Dörtyol/Hatay') }}</span></div>
+                <div class="f-contact"><i class="fa-solid fa-phone"></i><span>{{ \App\Models\SiteSetting::get('phone', '+90 530 379 31 33') }}</span></div>
+                <div class="f-contact"><i class="fa-solid fa-mobile-screen"></i><span>{{ __t('Acil', 'Emergency') }}: {{ \App\Models\SiteSetting::get('mobile', '+90 544 401 21 86') }}</span></div>
+                <div class="f-contact"><i class="fa-solid fa-envelope"></i><span>{{ \App\Models\SiteSetting::get('email', 'agency@navexmar.com') }}</span></div>
             </div>
 
         </div>
