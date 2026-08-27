@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
                 'features' => [
                     '7/24 Kesintisiz Liman & İdari Acentelik',
                     'Gümrük, Sahil Sağlık & Liman Başkanlığı Prosedürleri',
-                    'Draft Sörvey & Yükleme / Tahliye Gözetimi',
+                    'Yükleme / Tahliye & Ambar Gözetimi',
                     'Yönlendirme, Pilotaj & Römorkör Koordinasyonu',
                     'Nakit Avans (CTP) & Finansal Operasyon Yönetimi'
                 ],
@@ -216,12 +216,12 @@ class DatabaseSeeder extends Seeder
                 'published_at' => now()->subDays(2),
             ],
             [
-                'title' => 'Mersin Uluslararası Limanı (MIP) Genişleme Projesi ve Draft Güncellemeleri',
-                'slug' => 'mersin-uluslararasi-limani-draft-guncellemeleri',
+                'title' => 'Mersin Uluslararası Limanı (MIP) Genişleme Projesi ve Liman Duyuruları',
+                'slug' => 'mersin-uluslararasi-limani-genisleme-projesi',
                 'category' => 'Liman Duyuruları',
                 'image' => '/images/news_limits.jpg',
-                'summary' => 'MIP konteyner ve dökme yük rıhtımlarında yeni derinlik ve yanaşma limitleri açıklandı.',
-                'content' => "Mersin Uluslararası Limanı (MIP) rıhtım genişletme çalışmaları kapsamında yeni yanaşma draft limitleri yürürlüğe girmiştir. Konteyner ve dökme yük gemilerinizin fribort ve draft hesaplamalarında güncel cetvellere dikkat edilmesi rica olunur.",
+                'summary' => 'MIP rıhtımlarında yeni operasyonel kapasite ve yanaşma limitleri açıklandı.',
+                'content' => "Mersin Uluslararası Limanı (MIP) rıhtım genişletme çalışmaları kapsamında yeni yanaşma limitleri yürürlüğe girmiştir. Yük gemilerinizin yanaşma ve operasyon planlamalarında güncel liman cetvellerine dikkat edilmesi rica olunur.",
                 'author' => 'NAVEXMAR Operasyon Masası',
                 'is_published' => true,
                 'published_at' => now()->subDays(5),

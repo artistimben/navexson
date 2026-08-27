@@ -472,8 +472,14 @@
 <div class="topbar">
     <div class="topbar-inner">
         <div class="topbar-left">
-            <span class="topbar-item"><i class="fa-solid fa-phone"></i> {{ \App\Models\SiteSetting::get('phone', '+90 212 444 62 83') }}</span>
-            <span class="topbar-item"><i class="fa-solid fa-envelope"></i> {{ \App\Models\SiteSetting::get('email', 'ops@navexmar.com') }}</span>
+            <span class="topbar-item"><i class="fa-solid fa-phone"></i> {{ \App\Models\SiteSetting::get('phone', '+90 530 379 31 33') }}</span>
+            @php
+                $rawEmails = \App\Models\SiteSetting::get('email', 'agency@navexmar.com');
+                $emailList = array_filter(array_map('trim', preg_split('/[\s,;]+/', $rawEmails)));
+            @endphp
+            @foreach($emailList as $em)
+                <span class="topbar-item"><i class="fa-solid fa-envelope"></i> <a href="mailto:{{ $em }}" style="color:inherit; text-decoration:none;">{{ $em }}</a></span>
+            @endforeach
         </div>
         <div class="topbar-right">
             <div class="topbar-live"><span class="dot-live"></span> {{ __t('7/24 Nöbetçi Aktif', '24/7 Duty Active') }}</div>
@@ -612,7 +618,14 @@
                 <div class="f-contact"><i class="fa-solid fa-location-dot"></i><span>{{ \App\Models\SiteSetting::get('address', 'Numune Evler Mah/Sahil 1 Nolu Sok/no2/Dörtyol/Hatay') }}</span></div>
                 <div class="f-contact"><i class="fa-solid fa-phone"></i><span>{{ \App\Models\SiteSetting::get('phone', '+90 530 379 31 33') }}</span></div>
                 <div class="f-contact"><i class="fa-solid fa-mobile-screen"></i><span>{{ __t('Acil', 'Emergency') }}: {{ \App\Models\SiteSetting::get('mobile', '+90 544 401 21 86') }}</span></div>
-                <div class="f-contact"><i class="fa-solid fa-envelope"></i><span>{{ \App\Models\SiteSetting::get('email', 'agency@navexmar.com') }}</span></div>
+                <div class="f-contact" style="align-items: flex-start;">
+                    <i class="fa-solid fa-envelope" style="margin-top: 4px;"></i>
+                    <div style="display: flex; flex-direction: column; gap: 4px;">
+                        @foreach($emailList as $em)
+                            <a href="mailto:{{ $em }}" style="color: rgba(255,255,255,0.75); text-decoration: none;">{{ $em }}</a>
+                        @endforeach
+                    </div>
+                </div>
             </div>
 
         </div>

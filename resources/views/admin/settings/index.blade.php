@@ -23,12 +23,12 @@
                     <input type="text" name="mobile" class="admin-form-control" value="{{ old('mobile', $settings['mobile']) }}">
                 </div>
                 <div class="admin-form-group">
-                    <label class="admin-form-label">Kurumsal E-Posta</label>
-                    <input type="email" name="email" class="admin-form-control" value="{{ old('email', $settings['email']) }}">
-                </div>
-                <div class="admin-form-group">
                     <label class="admin-form-label">Çalışma Saatleri Metni</label>
                     <input type="text" name="working_hours" class="admin-form-control" value="{{ old('working_hours', $settings['working_hours'] ?? '08:00 – 18:00') }}">
+                </div>
+                <div class="admin-form-group" style="grid-column: span 2;">
+                    <label class="admin-form-label">Kurumsal E-Posta Adresleri <small style="font-weight: normal; color: var(--adm-muted);">(Birden fazla e-posta için virgül, boşluk veya alt alta yazabilirsiniz)</small></label>
+                    <textarea name="email" class="admin-form-control" rows="2" placeholder="agency@navexmar.com, olcay@navexmar.com, burak@navexmar.com">{{ old('email', $settings['email']) }}</textarea>
                 </div>
             </div>
 

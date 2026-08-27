@@ -30,7 +30,7 @@ class SettingAdminController extends Controller
 
     public function update(Request $request)
     {
-        $fields = ['phone', 'mobile', 'email', 'address', 'working_hours', 'facebook', 'linkedin', 'instagram', 'about_short'];
+        $fields = ['phone', 'mobile', 'email', 'address', 'working_hours', 'facebook', 'linkedin', 'instagram', 'about_short', 'hero_badge', 'hero_title', 'hero_desc'];
 
         foreach ($fields as $field) {
             if ($request->has($field)) {

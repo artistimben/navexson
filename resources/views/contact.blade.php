@@ -165,7 +165,15 @@ textarea.form-control { resize: vertical; min-height: 120px; }
                         <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
                         <div>
                             <div class="info-lbl">{{ __t('Operasyon E-posta', 'Operations Email') }}</div>
-                            <div class="info-val"><a href="mailto:{{ \App\Models\SiteSetting::get('email', 'ops@navexmar.com') }}">{{ \App\Models\SiteSetting::get('email', 'ops@navexmar.com') }}</a></div>
+                            <div class="info-val" style="display: flex; flex-direction: column; gap: 4px;">
+                                @php
+                                    $rawEmails = \App\Models\SiteSetting::get('email', 'agency@navexmar.com');
+                                    $emailList = array_filter(array_map('trim', preg_split('/[\s,;]+/', $rawEmails)));
+                                @endphp
+                                @foreach($emailList as $em)
+                                    <a href="mailto:{{ $em }}" style="color: var(--blue); text-decoration: none; word-break: break-all;">{{ $em }}</a>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
 
@@ -231,7 +239,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 
                         <div class="form-group full">
                             <label class="form-label">{{ __t('Mesajınız & Operasyon Detayları', 'Message & Operation Details') }} *</label>
-                            <textarea name="message" class="form-control" placeholder="{{ __t('Gemi GRT, LOA, draft, varış tarihi ve beklenen hizmet detaylarını yazabilirsiniz...', 'Enter vessel GRT, LOA, draft, ETA date and service requirements...') }}" required></textarea>
+                            <textarea name="message" class="form-control" placeholder="{{ __t('Gemi GRT, LOA, varış tarihi ve beklenen hizmet detaylarını yazabilirsiniz...', 'Enter vessel GRT, LOA, ETA date and service requirements...') }}" required></textarea>
                         </div>
                     </div>
 

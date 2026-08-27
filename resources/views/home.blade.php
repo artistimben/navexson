@@ -289,7 +289,7 @@
                 <p class="svc-deck-desc">{{ __t('İskenderun, Mersin, Taşucu, Antalya ve tüm Türk limanlarında gemi giriş-çıkış idari işlemleri, yük operasyonu ve fener harçları yönetimi.', 'Complete port state formalities, cargo operations, light dues and owner representation at Iskenderun, Mersin, Antalya and all Turkish ports.') }}</p>
                 <ul class="svc-deck-bullets">
                     <li><i class="fa-solid fa-circle-check"></i> {{ __t('Sahil Sağlık & Gümrük Onayları', 'Health & Customs Clearance') }}</li>
-                    <li><i class="fa-solid fa-circle-check"></i> {{ __t('Draft Sörvey & Yük Gözetimi', 'Draft Survey & Cargo Supervision') }}</li>
+                    <li><i class="fa-solid fa-circle-check"></i> {{ __t('Yükleme & Tahliye Gözetimi', 'Cargo & Discharge Supervision') }}</li>
                 </ul>
                 <a href="{{ route('services.show', 'gemi-acenteligi-liman-hizmetleri') }}" class="svc-deck-action">{{ __t('Hizmet Detayları', 'Service Details') }} <i class="fa-solid fa-arrow-right"></i></a>
             </div>
@@ -321,7 +321,7 @@
                 <div class="ops-card-icon"><i class="fa-solid fa-anchor"></i></div>
                 <div class="ops-card-title">İskenderun Limanları</div>
                 <div class="ops-card-subtitle">İskenderun Port · İsdemir</div>
-                <div class="ops-card-spec">Dökme Yük & Sıvı Yük<br>Maks Draft: 18.0 m<br>7/24 Rıhtım & Demir Acenteliği</div>
+                <div class="ops-card-spec">Dökme Yük & Sıvı Yük<br>İsdemir & İskenderun Port<br>7/24 Rıhtım & Demir Acenteliği</div>
             </div>
 
             <div class="ops-card">
@@ -335,7 +335,7 @@
                 <div class="ops-card-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
                 <div class="ops-card-title">Mersin Uluslararası Limanı</div>
                 <div class="ops-card-subtitle">MIP · Ataş Terminali</div>
-                <div class="ops-card-spec">Ro-Ro & Genel Kargo<br>Draft: 15.8 m<br>Hızlı Gümrük & Tahliye</div>
+                <div class="ops-card-spec">Ro-Ro & Genel Kargo<br>Mersin Uluslararası Limanı<br>Hızlı Gümrük & Tahliye</div>
             </div>
 
             <div class="ops-card">
