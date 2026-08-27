@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'NAVEXMAR — ' . __t('Türk Boğazları & Liman Hizmetleri A.Ş.', 'Turkish Straits & Port Services Inc.'))</title>
-    <meta name="description" content="NAVEXMAR — {{ __t('Türk Boğazları ve Türkiye limanlarında 7/24 profesyonel gemi acenteliği, liman hizmetleri, ikmal ve lojistik.', '24/7 Professional shipping agency, port attendance, bunkering and maritime logistics in Turkish Straits and all ports.') }}">
+    <title>@yield('title', 'NAVEXMAR — ' . __t('Gemi Acenteliği & Liman Hizmetleri A.Ş.', 'Shipping Agency & Port Services Inc.'))</title>
+    <meta name="description" content="NAVEXMAR — {{ __t('İskenderun, Mersin ve Antalya başta olmak üzere tüm Türkiye limanlarında 7/24 profesyonel gemi acenteliği, liman hizmetleri, ikmal ve lojistik.', '24/7 Professional shipping agency, port attendance, bunkering and maritime logistics in Iskenderun, Mersin, Antalya and all Turkish ports.') }}">
     
     <!-- Modern Typography Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -570,7 +570,7 @@
                     <div class="footer-logo-icon"><i class="fa-solid fa-anchor"></i></div>
                     <div class="footer-logo-text">NAVEX<span>MAR</span></div>
                 </div>
-                <p class="footer-about-p">{{ __t(\App\Models\SiteSetting::get('about_short', 'Türk Boğazları ve Türkiye limanlarında 18 yıllık tecrübemizle armatör ve kiracılara 7/24 profesyonel gemi acenteliği hizmetleri sunuyoruz.'), 'Providing 24/7 professional shipping agency services for shipowners and charterers in the Turkish Straits and all ports of Turkey with 18 years of experience.') }}</p>
+                <p class="footer-about-p">{{ __t(\App\Models\SiteSetting::get('about_short', 'İskenderun\'dan Antalya\'ya tüm Akdeniz ve Türkiye limanlarında armatör ve kiracılara 7/24 profesyonel gemi acenteliği ve operasyonel destek hizmetleri sunuyoruz.'), 'Providing 24/7 professional shipping agency services and operational support for shipowners and charterers in Iskenderun, Antalya and all ports of Turkey.') }}</p>
                 <div class="footer-certs">
                     <span class="footer-cert">BIMCO {{ __t('Üyesi', 'Member') }}</span>
                     <span class="footer-cert">FONASBA</span>
@@ -600,7 +600,7 @@
             <div class="footer-col">
                 <h5>{{ __t('Hizmetlerimiz', 'Our Services') }}</h5>
                 <ul class="footer-nav">
-                    <li><a href="{{ route('services.show', 'turk-bogazlari-gecis-acenteligi') }}"><i class="fa-solid fa-chevron-right"></i> {{ __t('Boğaz Transit Geçişi', 'Straits Transit Agency') }}</a></li>
+                    <li><a href="{{ route('services.show', 'akdeniz-limanlari-terminal-acenteligi') }}"><i class="fa-solid fa-chevron-right"></i> {{ __t('Akdeniz & Terminal Acenteliği', 'Mediterranean & Terminal Agency') }}</a></li>
                     <li><a href="{{ route('services.show', 'gemi-acenteligi-liman-hizmetleri') }}"><i class="fa-solid fa-chevron-right"></i> {{ __t('Liman Acenteliği', 'Port Agency Services') }}</a></li>
                     <li><a href="{{ route('services.show', 'yakit-ve-kumanya-ikmali') }}"><i class="fa-solid fa-chevron-right"></i> {{ __t('Bunkering & Kumanya', 'Bunkering & Provisions') }}</a></li>
                     <li><a href="{{ route('services.show', 'murettebat-degisimi-kara-lojistigi') }}"><i class="fa-solid fa-chevron-right"></i> {{ __t('Mürettebat Değişimi', 'Crew Change Logistics') }}</a></li>

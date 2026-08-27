@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'NAVEXMAR — Türk Boğazları Gemi Acenteliği | 7/24 Deniz Operasyonları')
+@section('title', 'NAVEXMAR — Gemi Acenteliği & Liman Hizmetleri | İskenderun - Antalya')
 
 @section('styles')
 <style>
@@ -237,8 +237,8 @@
         <div class="hm-hero-layout">
             <div>
                 <div class="hm-hero-eyebrow"><span class="dot-live"></span> {{ __t('7/24 Canlı Operasyon Masası', '24/7 Live Duty Operations Desk') }}</div>
-                <h1>{!! __t('Türk Boğazları & Limanlarında<br><span>Profesyonel Gemi Acenteliği</span>', 'Professional Shipping Agency<br>in <span>Turkish Straits & Ports</span>') !!}</h1>
-                <p class="hm-hero-desc">{{ __t('İstanbul ve Çanakkale boğazı transit geçişleri ile Türkiye\'nin tüm limanlarında 18 yıllık tecrübe, şeffaf DA/CA raporlaması ve 7/24 kesintisiz nöbet operasyonu.', '24/7 Shipping agency attendance, transparent DA/CA statements, and zero-delay handling across the Turkish Straits and all ports with 18 years experience.') }}</p>
+                <h1>{!! __t('İskenderun\'dan Antalya\'ya<br><span>Profesyonel Gemi Acenteliği</span>', 'Professional Shipping Agency<br>in <span>Mediterranean & Turkish Ports</span>') !!}</h1>
+                <p class="hm-hero-desc">{{ __t('İskenderun, Ceyhan, Mersin, Taşucu ve Antalya başta olmak üzere tüm Türkiye limanlarında şeffaf DA/CA raporlaması, güvenilir operasyon ve 7/24 kesintisiz nöbet hizmeti.', '24/7 Shipping agency attendance, transparent DA/CA statements, and zero-delay handling across Iskenderun, Mersin, Antalya and all Turkish ports.') }}</p>
                 
                 <div class="hm-hero-btns">
                     <a href="{{ route('contact') }}" class="btn-primary"><i class="fa-solid fa-file-invoice-dollar"></i> {{ __t('Proforma Teklif İste', 'Request Proforma Quote') }}</a>
@@ -246,9 +246,9 @@
                 </div>
 
                 <div class="hm-hero-stats">
-                    <div><div class="hm-stat-num">18<span>+</span></div><div class="hm-stat-lbl">{{ __t('Yıllık Tecrübe', 'Years Experience') }}</div></div>
+                    <div><div class="hm-stat-num">100<span>%</span></div><div class="hm-stat-lbl">{{ __t('Güvenilir Hizmet', 'Reliable Service') }}</div></div>
                     <div><div class="hm-stat-num">4<span>K+</span></div><div class="hm-stat-lbl">{{ __t('Yıllık Gemi Uğrağı', 'Annual Vessel Calls') }}</div></div>
-                    <div><div class="hm-stat-num">9</div><div class="hm-stat-lbl">{{ __t('Ana Liman Bölgesi', 'Key Port Regions') }}</div></div>
+                    <div><div class="hm-stat-num">12<span>+</span></div><div class="hm-stat-lbl">{{ __t('Ana Terminal & Liman', 'Key Terminals & Ports') }}</div></div>
                     <div><div class="hm-stat-num">24<span>/7</span></div><div class="hm-stat-lbl">{{ __t('Canlı Operasyon', 'Duty Operations') }}</div></div>
                 </div>
             </div>
@@ -273,20 +273,20 @@
 
         <div class="svc-deck-grid">
             <div class="svc-deck-card">
-                <div class="svc-deck-icon"><i class="fa-solid fa-water"></i></div>
-                <h3 class="svc-deck-title">{{ __t('Boğaz Transit Acenteliği', 'Straits Transit Agency') }}</h3>
-                <p class="svc-deck-desc">{{ __t('İstanbul ve Çanakkale boğazlarından kesintisiz, emniyetli ve hızlı transit geçiş izinleri, VTS bildirimi ve pilotaj koordinasyonu.', 'Safety clearance, pilotage coordination, VTS notifications and administrative handling for Bosphorus & Dardanelles transit.') }}</p>
+                <div class="svc-deck-icon"><i class="fa-solid fa-anchor"></i></div>
+                <h3 class="svc-deck-title">{{ __t('Akdeniz & Terminal Acenteliği', 'Mediterranean & Terminal Agency') }}</h3>
+                <p class="svc-deck-desc">{{ __t('İskenderun Körfezi, Ceyhan Botaş/Toros ve Mersin terminallerinde kesintisiz acentelik, liman izinleri, pilotaj ve rıhtım operasyonu.', 'Seamless agency, port clearance, pilotage and terminal operations in Iskenderun Gulf, Ceyhan and Mersin.') }}</p>
                 <ul class="svc-deck-bullets">
-                    <li><i class="fa-solid fa-circle-check"></i> {{ __t('7/24 SP1 & SP2 Bildirim Takibi', '24/7 SP1 & SP2 Tracking') }}</li>
+                    <li><i class="fa-solid fa-circle-check"></i> {{ __t('7/24 Liman & Terminal Bildirim Takibi', '24/7 Port & Terminal Clearance') }}</li>
                     <li><i class="fa-solid fa-circle-check"></i> {{ __t('Kılavuz Kaptan & Römorkör İzni', 'Pilotage & Tugboat Permits') }}</li>
                 </ul>
-                <a href="{{ route('services.show', 'turk-bogazlari-gecis-acenteligi') }}" class="svc-deck-action">{{ __t('Hizmet Detayları', 'Service Details') }} <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="{{ route('services.show', 'akdeniz-limanlari-terminal-acenteligi') }}" class="svc-deck-action">{{ __t('Hizmet Detayları', 'Service Details') }} <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
             <div class="svc-deck-card">
                 <div class="svc-deck-icon"><i class="fa-solid fa-ship"></i></div>
                 <h3 class="svc-deck-title">{{ __t('Liman & Gemi Acenteliği', 'Port & Vessel Agency') }}</h3>
-                <p class="svc-deck-desc">{{ __t('Ambarlı, İzmit, Aliağa ve tüm Türk limanlarında gemi giriş-çıkış idari işlemleri, yük operasyonu ve fener harçları yönetimi.', 'Complete port state formalities, cargo operations, light dues and owner representation at all Turkish ports.') }}</p>
+                <p class="svc-deck-desc">{{ __t('İskenderun, Mersin, Taşucu, Antalya ve tüm Türk limanlarında gemi giriş-çıkış idari işlemleri, yük operasyonu ve fener harçları yönetimi.', 'Complete port state formalities, cargo operations, light dues and owner representation at Iskenderun, Mersin, Antalya and all Turkish ports.') }}</p>
                 <ul class="svc-deck-bullets">
                     <li><i class="fa-solid fa-circle-check"></i> {{ __t('Sahil Sağlık & Gümrük Onayları', 'Health & Customs Clearance') }}</li>
                     <li><i class="fa-solid fa-circle-check"></i> {{ __t('Draft Sörvey & Yük Gözetimi', 'Draft Survey & Cargo Supervision') }}</li>
@@ -313,36 +313,36 @@
     <div class="hm-container">
         <div style="text-align:center; margin-bottom:48px;">
             <div class="sec-label" style="color:var(--cyan); justify-content:center;">{{ __t('Operasyon Bölgelerimiz', 'Operational Regions') }}</div>
-            <h2 class="sec-title" style="color:white;">{{ __t('Stratejik Su Yolları ve Ana Limanlar', 'Strategic Waterways & Main Ports') }}</h2>
+            <h2 class="sec-title" style="color:white;">{{ __t('İskenderun\'dan Antalya\'ya Akdeniz Limanları', 'Mediterranean Ports: From Iskenderun to Antalya') }}</h2>
         </div>
 
         <div class="ops-grid">
             <div class="ops-card">
-                <div class="ops-card-icon"><i class="fa-solid fa-water"></i></div>
-                <div class="ops-card-title">İstanbul Boğazı</div>
-                <div class="ops-card-subtitle">Bosphorus Strait (31 km)</div>
-                <div class="ops-card-spec">Maks LOA: 330 m<br>Maks Draft: 17.5 m<br>VTS Ch 12 / Ch 11</div>
+                <div class="ops-card-icon"><i class="fa-solid fa-anchor"></i></div>
+                <div class="ops-card-title">İskenderun & Dörtyol</div>
+                <div class="ops-card-subtitle">İskenderun Port · İsdemir · Toros</div>
+                <div class="ops-card-spec">Dökme Yük, Konteyner & Sıvı<br>Maks Draft: 18.0 m<br>7/24 Rıhtım & Demir Acenteliği</div>
             </div>
 
             <div class="ops-card">
-                <div class="ops-card-icon"><i class="fa-solid fa-compass"></i></div>
-                <div class="ops-card-title">Çanakkale Boğazı</div>
-                <div class="ops-card-subtitle">Dardanelles Strait (68 km)</div>
-                <div class="ops-card-spec">Maks LOA: 300 m<br>Maks Draft: 18.0 m<br>VTS Ch 71 / Ch 13</div>
+                <div class="ops-card-icon"><i class="fa-solid fa-gas-pump"></i></div>
+                <div class="ops-card-title">Ceyhan Petrol Terminalleri</div>
+                <div class="ops-card-subtitle">Botaş · BTC · Haydar Aliyev</div>
+                <div class="ops-card-spec">Ham Petrol, Tanker & Kimyasal<br>SBM Şamandıraları & Rıhtım<br>Güvenli Demirleme & İkmal</div>
             </div>
 
             <div class="ops-card">
                 <div class="ops-card-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-                <div class="ops-card-title">Ambarlı Limanı</div>
-                <div class="ops-card-subtitle">Kumport · Marport · Mardaş</div>
-                <div class="ops-card-spec">Konteyner & Ro-Ro<br>Draft: 14.5 m<br>7/24 Rıhtım Acenteliği</div>
+                <div class="ops-card-title">Mersin Uluslararası Limanı</div>
+                <div class="ops-card-subtitle">MIP · Ataş Terminali</div>
+                <div class="ops-card-spec">Konteyner, Ro-Ro & Genel Kargo<br>Draft: 15.8 m<br>Hızlı Gümrük & Tahliye</div>
             </div>
 
             <div class="ops-card">
-                <div class="ops-card-icon"><i class="fa-solid fa-industry"></i></div>
-                <div class="ops-card-title">İzmit Körfezi</div>
-                <div class="ops-card-subtitle">Evyap · Yılport · DP World</div>
-                <div class="ops-card-spec">Dökme Yük & Tanker<br>Tüpraş & Poliport<br>Kimyasal İkmal</div>
+                <div class="ops-card-icon"><i class="fa-solid fa-ship"></i></div>
+                <div class="ops-card-title">Antalya & Taşucu Limanları</div>
+                <div class="ops-card-subtitle">Port Akdeniz · Taşucu Seka</div>
+                <div class="ops-card-spec">Yolcu, Ro-Ro & Proje Kargo<br>Kruvaziyer & Dökme Yük<br>VIP Acentelik & Transit</div>
             </div>
         </div>
     </div>
@@ -356,7 +356,7 @@
                 <div class="sec-label">{{ __t('Güven ve Şeffaflık', 'Trust & Transparency') }}</div>
                 <h2 class="sec-title">{{ __t('Neden Armatörler NAVEXMAR\'ı Tercih Ediyor?', 'Why Owners Choose NAVEXMAR?') }}</h2>
                 <p style="color:var(--muted); font-size:0.94rem; line-height:1.7; margin-bottom:24px;">
-                    {{ __t('18 yıllık tecrübemiz ve BIMCO ile FONASBA üyeliklerimizle gemi uğraklarınızda sıfır hatayla hizmet sunuyoruz.', 'With 18 years of experience and BIMCO and FONASBA memberships, we deliver zero-error agency attendance.') }}
+                    {{ __t('BIMCO ve FONASBA üyeliklerimiz, uzman operasyon kadromuzla gemi uğraklarınızda sıfır hatayla hizmet sunuyoruz.', 'With our BIMCO and FONASBA memberships and expert operational staff, we deliver zero-error agency attendance for your port calls.') }}
                 </p>
                 <a href="{{ route('about') }}" class="btn-primary"><i class="fa-solid fa-building"></i> {{ __t('Kurumsal Profilimizi İnceleyin', 'Explore Corporate Profile') }}</a>
             </div>
@@ -395,7 +395,7 @@
     <div class="cta-banner">
         <div>
             <h3>{{ __t('Geminize Özel Proforma Liman Hesabı İster Misiniz?', 'Need a Custom Proforma PDA for Your Vessel?') }}</h3>
-            <p>{{ __t('Türk Boğazları transit geçişi veya liman uğraklarınız için 2 saat içinde detaylı proforma hesap (PDA) hazırlayalım.', 'Let us prepare a detailed proforma disbursement account (PDA) within 2 hours for your Bosphorus transit or port call.') }}</p>
+            <p>{{ __t('İskenderun, Mersin, Antalya ve tüm liman uğraklarınız için 2 saat içinde detaylı proforma hesap (PDA) hazırlayalım.', 'Let us prepare a detailed proforma disbursement account (PDA) within 2 hours for your Iskenderun, Mersin, Antalya or any Turkish port call.') }}</p>
         </div>
         <div style="display:flex; gap:12px; flex-wrap:wrap;">
             <a href="{{ route('contact') }}" class="btn-primary" style="background:white; color:var(--navy) !important;"><i class="fa-solid fa-paper-plane"></i> {{ __t('Teklif İste', 'Request Quote') }}</a>

@@ -35,15 +35,15 @@ class AboutAdminController extends Controller
             'tl_2024_desc'  => SiteSetting::get('tl_2024_desc', 'Karadeniz transit geçiş operasyonları.'),
             
             // Team
-            'team_1_name' => SiteSetting::get('team_1_name', 'Mehmet Kaya'),
-            'team_1_role' => SiteSetting::get('team_1_role', 'Genel Müdür & Kurucu'),
-            'team_1_bio'  => SiteSetting::get('team_1_bio', '22 yıllık denizcilik tecrübesi.'),
-            'team_2_name' => SiteSetting::get('team_2_name', 'Ayşe Demir'),
-            'team_2_role' => SiteSetting::get('team_2_role', 'Operasyon Direktörü'),
-            'team_2_bio'  => SiteSetting::get('team_2_bio', '15 yıldır liman operasyonları uzmanı.'),
+            'team_1_name' => SiteSetting::get('team_1_name', 'Burak Arıkan'),
+            'team_1_role' => SiteSetting::get('team_1_role', 'Liman Operasyon Müdürü'),
+            'team_1_bio'  => SiteSetting::get('team_1_bio', 'Liman hizmetleri ve yerel acentelik yönetimi.'),
+            'team_2_name' => SiteSetting::get('team_2_name', 'Olcay Çakıcı'),
+            'team_2_role' => SiteSetting::get('team_2_role', 'Operasyon & Lojistik Müdürü'),
+            'team_2_bio'  => SiteSetting::get('team_2_bio', 'İskenderun, Mersin ve Akdeniz liman operasyonları.'),
             'team_3_name' => SiteSetting::get('team_3_name', 'Ali Yılmaz'),
             'team_3_role' => SiteSetting::get('team_3_role', 'Finans & Disbursement'),
-            'team_3_bio'  => SiteSetting::get('team_3_bio', '12 yıllık da/ca raporlama tecrübesi.'),
+            'team_3_bio'  => SiteSetting::get('team_3_bio', 'Şeffaf DA/CA raporlama yönetimi.'),
         ];
 
         return view('admin.about.index', compact('settings'));

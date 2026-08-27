@@ -141,7 +141,7 @@ if (!empty($service->image)) {
                 <div class="svc-sidebar-card" style="background:var(--navy); color:white;">
                     <h4 style="color:white; border-color:rgba(255,255,255,0.12);"><i class="fa-solid fa-headset" style="color:var(--cyan);margin-right:6px;"></i> {{ __t('7/24 Operasyon Masası', '24/7 Duty Desk') }}</h4>
                     <p style="font-size:0.82rem; color:rgba(255,255,255,0.7); margin-bottom:16px; line-height:1.6;">
-                        {{ __t('Gemilerinizin Türk Boğazları geçişi ve liman acenteliği için 7/24 anlık canlı destek.', '24/7 duty attendance for Bosphorus transit and Turkish port agency calls.') }}
+                        {{ __t('İskenderun, Mersin ve tüm liman operasyonlarınız için 7/24 anlık canlı destek.', '24/7 duty attendance for Iskenderun, Mersin and all Turkish port agency calls.') }}
                     </p>
                     <div style="font-size:0.84rem; font-weight:700; color:white; margin-bottom:8px;">
                         <i class="fa-solid fa-phone" style="color:var(--cyan); margin-right:6px;"></i> {{ \App\Models\SiteSetting::get('phone', '+90 212 444 62 83') }}

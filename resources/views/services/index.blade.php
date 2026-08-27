@@ -1,21 +1,23 @@
 @extends('layouts.app')
-@section('title', 'Hizmetlerimiz | NAVEXMAR — Türk Boğazları Gemi Acenteliği')
+@section('title', 'Hizmetlerimiz | NAVEXMAR — Gemi Acenteliği & Liman Hizmetleri')
 
 @php
 $serviceImages = [
-    'gemi-acenteligi-liman-hizmetleri'   => 'images/svc_port_agency.jpg',
-    'turk-bogazlari-gecis-acenteligi'    => 'images/svc_strait_transit.jpg',
-    'yakit-ve-kumanya-ikmali'            => 'images/svc_bunkering.jpg',
-    'murettebat-degisimi-kara-lojistigi' => 'images/svc_crew_change.jpg',
-    'yuk-ve-konteyner-operasyonlari'     => 'images/svc_cargo.jpg',
-    'teknik-survey-bakim-onarim'         => 'images/svc_technical.jpg',
-    'teknik-ve-makine-destegi'           => 'images/svc_technical.jpg',
+    'gemi-acenteligi-liman-hizmetleri'        => 'images/svc_port_agency.jpg',
+    'akdeniz-limanlari-terminal-acenteligi'  => 'images/svc_strait_transit.jpg',
+    'turk-bogazlari-gecis-acenteligi'         => 'images/svc_strait_transit.jpg',
+    'yakit-ve-kumanya-ikmali'                 => 'images/svc_bunkering.jpg',
+    'murettebat-degisimi-kara-lojistigi'      => 'images/svc_crew_change.jpg',
+    'yuk-ve-konteyner-operasyonlari'          => 'images/svc_cargo.jpg',
+    'teknik-survey-bakim-onarim'              => 'images/svc_technical.jpg',
+    'teknik-ve-makine-destegi'                => 'images/svc_technical.jpg',
 ];
 
 $serviceIcons = [
-    'gemi-acenteligi-liman-hizmetleri'   => 'fa-ship',
-    'turk-bogazlari-gecis-acenteligi'    => 'fa-water',
-    'yakit-ve-kumanya-ikmali'            => 'fa-gas-pump',
+    'gemi-acenteligi-liman-hizmetleri'        => 'fa-ship',
+    'akdeniz-limanlari-terminal-acenteligi'  => 'fa-anchor',
+    'turk-bogazlari-gecis-acenteligi'         => 'fa-water',
+    'yakit-ve-kumanya-ikmali'                 => 'fa-gas-pump',
     'murettebat-degisimi-kara-lojistigi' => 'fa-users',
     'yuk-ve-konteyner-operasyonlari'     => 'fa-boxes-stacked',
     'teknik-survey-bakim-onarim'         => 'fa-screwdriver-wrench',
@@ -100,7 +102,7 @@ $fallbackImages = [
     <div class="container">
         <div class="page-hero-badge"><i class="fa-solid fa-anchor"></i> {{ __t('Hizmetler', 'Services') }}</div>
         <h1>{{ __t('Denizin Her Noktasında Yanınızdayız', 'With You at Every Point of the Sea') }}</h1>
-        <p>{{ __t('Türk Boğazları transit geçişinden liman operasyonlarına, bunkeringden mürettebat lojistiğine — eksiksiz deniz acenteliği.', 'From Turkish Straits transit clearance to port attendance, bunkering and crew logistics — full maritime agency.') }}</p>
+        <p>{{ __t('İskenderun\'dan Antalya\'ya terminal acenteliğinden liman operasyonlarına, bunkeringden mürettebat lojistiğine — eksiksiz deniz acenteliği.', 'From Mediterranean terminal attendance to port operations, bunkering and crew logistics — full maritime agency.') }}</p>
     </div>
 </div>
 

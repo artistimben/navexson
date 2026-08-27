@@ -168,7 +168,7 @@ $newsFallbackImages = [
     <div class="container news-hero-wrap">
         <div class="page-hero-badge"><i class="fa-solid fa-newspaper"></i> {{ __t('Sirkülerler & Duyurular', 'Circulars & Bulletins') }}</div>
         <h1>{{ __t('Denizcilik Haberleri & Liman Sirkülerleri', 'Maritime News & Port Circulars') }}</h1>
-        <p>{{ __t('Türk Boğazları mevzuat güncellemeleri, liman başkanlığı duyuruları ve denizcilik sektör haberleri.', 'Turkish Straits regulation updates, port authority circulars, and maritime industry news.') }}</p>
+        <p>{{ __t('İskenderun ve Akdeniz liman başkanlığı duyuruları, denizcilik sirküleri ve sektörel gelişmeler.', 'Mediterranean port authority circulars, maritime regulations, and industry news.') }}</p>
     </div>
 </div>
 

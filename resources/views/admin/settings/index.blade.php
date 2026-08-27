@@ -52,11 +52,11 @@
             </div>
             <div class="admin-form-group">
                 <label class="admin-form-label">Hero Ana Başlık</label>
-                <input type="text" name="hero_title" class="admin-form-control" value="{{ old('hero_title', $settings['hero_title'] ?? 'Türk Boğazları\'nda Güvenilir Gemi Acenteniz') }}">
+                <input type="text" name="hero_title" class="admin-form-control" value="{{ old('hero_title', $settings['hero_title'] ?? 'İskenderun\'dan Antalya\'ya Güvenilir Gemi Acenteniz') }}">
             </div>
             <div class="admin-form-group">
                 <label class="admin-form-label">Hero Alt Açıklama Metni</label>
-                <textarea name="hero_desc" class="admin-form-control" rows="2">{{ old('hero_desc', $settings['hero_desc'] ?? 'İstanbul ve Çanakkale Boğazlarından Türkiye limanlarına — 18 yıllık deneyimle 7/24 profesyonel acentelik.') }}</textarea>
+                <textarea name="hero_desc" class="admin-form-control" rows="2">{{ old('hero_desc', $settings['hero_desc'] ?? 'İskenderun, Mersin ve Antalya başta olmak üzere tüm Türkiye limanlarında 7/24 profesyonel acentelik.') }}</textarea>
             </div>
 
             {{-- Sayfa Yönetimi --}}

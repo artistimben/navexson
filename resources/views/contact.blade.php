@@ -117,7 +117,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     <div class="container cnt-container">
         <div class="page-hero-badge"><i class="fa-solid fa-headset"></i> {{ __t('7/24 Nöbetçi Operasyon Masası', '24/7 Duty Operations Desk') }}</div>
         <h1>{{ __t('İletişim & Proforma Teklif Talebi', 'Contact & Proforma PDA Request') }}</h1>
-        <p>{{ __t('Türk Boğazları ve tüm Türkiye limanları için 7/24 anlık liman masraf hesabı (PDA) ve acentelik teklifi alın.', 'Get 24/7 instant port disbursement calculation (PDA) and agency quotes for Turkish Straits and all ports.') }}</p>
+        <p>{{ __t('İskenderun, Mersin, Antalya ve tüm Türkiye limanları için 7/24 anlık liman masraf hesabı (PDA) ve acentelik teklifi alın.', 'Get 24/7 instant port disbursement calculation (PDA) and agency quotes for Iskenderun, Mersin, Antalya and all Turkish ports.') }}</p>
     </div>
 </div>
 
@@ -171,7 +171,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 
                     <div class="vhf-row">
                         <i class="fa-solid fa-tower-broadcast"></i>
-                        <span>VTS VHF: Ch 16 / 12 / 11 (Bosphorus & Dardanelles)</span>
+                        <span>VHF: Ch 16 / 12 / 11 (Port & Marine Channels)</span>
                     </div>
                 </div>
 
@@ -224,8 +224,8 @@ textarea.form-control { resize: vertical; min-height: 120px; }
                         <div class="form-group">
                             <label class="form-label">{{ __t('Hizmet / Operasyon Tipi', 'Service / Operation') }}</label>
                             <select name="subject" class="form-control">
-                                <option value="Boğaz Transit Geçişi">{{ __t('İstanbul / Çanakkale Boğaz Transit', 'Bosphorus / Dardanelles Transit') }}</option>
-                                <option value="Liman Acenteliği">{{ __t('Liman Acenteliği (Ambarlı, İzmit vb.)', 'Port Agency Attendance') }}</option>
+                                <option value="Akdeniz Terminal Acenteliği">{{ __t('Akdeniz Terminal Acenteliği (İskenderun, Ceyhan, Mersin vb.)', 'Mediterranean Terminal Agency') }}</option>
+                                <option value="Liman Acenteliği">{{ __t('Liman Acenteliği (İskenderun, Mersin, Antalya vb.)', 'Port Agency Attendance') }}</option>
                                 <option value="Bunkering / Kumanya">{{ __t('Bunkering & Yakıt İkmali', 'Bunkering & Provisions') }}</option>
                                 <option value="Mürettebat Değişimi">{{ __t('Mürettebat Değişimi & Lojistik', 'Crew Change & Shore Logistics') }}</option>
                                 <option value="Diğer">{{ __t('Diğer Özel Talep', 'Other Special Request') }}</option>

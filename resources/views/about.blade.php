@@ -217,8 +217,8 @@
 <div class="abt-hero-deck">
     <div class="container abt-container">
         <div class="page-hero-badge"><i class="fa-solid fa-building"></i> {{ __t('Kurumsal Profil', 'Corporate Profile') }}</div>
-        <h1>{{ __t('Denizcilikte 18 Yıllık Tecrübe ve Güven', '18 Years of Excellence & Trust in Shipping') }}</h1>
-        <p>{{ __t('Türk Boğazları ve Türkiye limanlarında armatör, kiracı ve gemi işletmecilerine 7/24 uluslararası standartlarda profesyonel acentelik hizmeti veriyoruz.', 'Providing 24/7 professional shipping agency services for shipowners, charterers, and operators in the Turkish Straits and all ports.') }}</p>
+        <h1>{{ __t('Denizcilikte Güven ve Kesintisiz Hizmet', 'Excellence & Trust in Maritime Services') }}</h1>
+        <p>{{ __t('İskenderun Körfezi, Mersin ve Antalya başta olmak üzere tüm Türkiye limanlarında armatör, kiracı ve gemi işletmecilerine 7/24 uluslararası standartlarda profesyonel acentelik hizmeti veriyoruz.', 'Providing 24/7 professional shipping agency services for shipowners, charterers, and operators in Iskenderun, Mersin, Antalya and all Turkish ports.') }}</p>
     </div>
 </div>
 
@@ -228,25 +228,25 @@
         <div class="abt-grid">
             <div>
                 <div class="sec-label">{{ __t('Biz Kimiz?', 'Who We Are') }}</div>
-                <h2 class="sec-title">{{ __t('Türk Boğazları & Liman Hizmetlerinde Lider Acente', 'Leading Agency in Turkish Straits & Ports') }}</h2>
+                <h2 class="sec-title">{{ __t('Akdeniz ve Türkiye Liman Hizmetlerinde Güvenilir Acente', 'Trusted Agency in Mediterranean & Turkish Ports') }}</h2>
                 <p style="color:var(--muted); font-size:0.92rem; line-height:1.75; margin-bottom:16px;">
-                    {{ __t('NAVEXMAR, 2008 yılında İstanbul\'da kurulmuş olup Türk Boğazları (İstanbul ve Çanakkale Boğazı) transit geçişleri ve Türkiye\'nin tüm limanlarında (Ambarlı, Haydarpaşa, İzmit Körfezi, Aliağa, Mersin, İskenderun vb.) 7/24 acentelik ve deniz lojistiği hizmetleri sunmaktadır.', 'Established in 2008 in Istanbul, NAVEXMAR delivers 24/7 shipping agency and maritime logistics in the Turkish Straits (Bosphorus & Dardanelles) and all ports of Turkey.') }}
+                    {{ __t('NAVEXMAR, İskenderun, Dörtyol, Ceyhan, Mersin, Taşucu ve Antalya başta olmak üzere Türkiye\'nin tüm limanlarında 7/24 gemi acenteliği, ikmal, teknik destek ve deniz lojistiği hizmetleri sunmaktadır.', 'NAVEXMAR delivers 24/7 shipping agency, bunkering, technical support and maritime logistics across Iskenderun, Dortyol, Ceyhan, Mersin, Tasucu, Antalya and all Turkish ports.') }}
                 </p>
                 <p style="color:var(--muted); font-size:0.92rem; line-height:1.75; margin-bottom:24px;">
                     {{ __t('Uzman ekibimiz, en karmaşık operasyonlarda bile sıfır gecikme prensibiyle hareket ederek armatörlerimize ve kiracılarımıza şeffaf, güvenilir ve rekabetçi acentelik çözümleri üretir.', 'Our expert team operates under a zero-delay principle even in complex operations, delivering transparent, reliable and cost-effective agency solutions.') }}
                 </p>
                 <div class="stats-mini-grid">
                     <div class="stat-mini-card">
-                        <div class="stat-mini-num">18+ {{ __t('Yıl', 'Yrs') }}</div>
-                        <div class="stat-mini-lbl">{{ __t('Sektörel Tecrübe', 'Industry Experience') }}</div>
+                        <div class="stat-mini-num">100%</div>
+                        <div class="stat-mini-lbl">{{ __t('Güvenilir Hizmet', 'Reliable Service') }}</div>
                     </div>
                     <div class="stat-mini-card">
                         <div class="stat-mini-num">4.000+</div>
                         <div class="stat-mini-lbl">{{ __t('Başarılı Gemi Uğrağı', 'Successful Vessel Calls') }}</div>
                     </div>
                     <div class="stat-mini-card">
-                        <div class="stat-mini-num">9</div>
-                        <div class="stat-mini-lbl">{{ __t('Ana Liman Bölgesi', 'Main Port Regions') }}</div>
+                        <div class="stat-mini-num">12+</div>
+                        <div class="stat-mini-lbl">{{ __t('Ana Liman & Terminal', 'Main Ports & Terminals') }}</div>
                     </div>
                     <div class="stat-mini-card">
                         <div class="stat-mini-num">7/24</div>
@@ -261,7 +261,7 @@
                     <div class="abt-badge-icon"><i class="fa-solid fa-clock"></i></div>
                     <div>
                         <strong>7/24 Kesintisiz</strong>
-                        <span>{{ __t('Liman & Boğaz Acenteliği', 'Straits & Port Agency') }}</span>
+                        <span>{{ __t('Liman & Gemi Acenteliği', 'Port & Vessel Agency') }}</span>
                     </div>
                 </div>
             </div>
@@ -350,7 +350,7 @@
     <div class="container abt-container">
         <div style="text-align:center; margin-bottom:48px;">
             <div class="sec-label" style="justify-content:center;">{{ __t('Yönetim Kadromuz', 'Executive Team') }}</div>
-            <h2 class="sec-title">{{ __t('Deneyimli Kaptanlar ve Denizcilik Uzmanları', 'Experienced Captains & Shipping Experts') }}</h2>
+            <h2 class="sec-title">{{ __t('Uzman Kaptanlar ve Denizcilik Profesyonelleri', 'Master Captains & Maritime Professionals') }}</h2>
         </div>
 
         <div class="team-grid">
@@ -363,8 +363,8 @@
             <div class="team-card">
                 <div class="team-avatar"><i class="fa-solid fa-route"></i></div>
                 <div class="team-name">Olcay Çakıcı</div>
-                <div class="team-role">{{ __t('Boğaz Operasyon Müdürü', 'Straits Operations Manager') }}</div>
-                <div class="team-bio">{{ __t('İstanbul ve Çanakkale boğazlarından transit geçiş yapan gemilerin operasyonel koordinasyonunu sağlamaktadır.', 'Provides operational coordination for vessels transiting the Turkish Straits.') }}</div>
+                <div class="team-role">{{ __t('Operasyon & Lojistik Müdürü', 'Operations & Logistics Manager') }}</div>
+                <div class="team-bio">{{ __t('İskenderun, Mersin ve Akdeniz limanlarında yanaşma, tahliye, ikmal ve lojistik operasyonlarının koordinasyonunu sağlamaktadır.', 'Provides operational coordination for berthing, discharge, supplies and logistics across Mediterranean ports.') }}</div>
             </div>
         </div>
     </div>
