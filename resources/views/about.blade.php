@@ -279,7 +279,7 @@
         </div>
         
         <p class="perspective-text">
-            {{ __t('Navexmar, sektördeki diğer firmalardan farklı bir yaklaşımla gemi bakım ve uluslararası ticaret hizmetleri sunan bir şirkettir. Kuruluşumuzdan bu yana, insan odaklı, tüm ortaklarimizi kapsayan ve her yönüyle entegre bir şirket olmaya çalışıyoruz. Müşterilerimize en iyi hizmeti sunmak için sürekli gelişim ve yenilikçilik ilkelerimizle hareket ediyoruz.', 'Navexmar is a company that offers vessel maintenance and international trade services with a different approach from other firms in the sector. Since our establishment, we strive to be a human-centered, inclusive, and fully integrated company. We act with our principles of continuous development and innovation to offer the best service to our customers.') }}
+            {{ __t('Navexmar, sektördeki diğer firmalardan farklı bir yaklaşımla gemi acenteliği ve uluslararası ticaret hizmetleri sunan bir şirkettir. Kuruluşumuzdan bu yana, insan odaklı, tüm ortaklarimizi kapsayan ve her yönüyle entegre bir şirket olmaya çalışıyoruz. Müşterilerimize en iyi hizmeti sunmak için sürekli gelişim ve yenilikçilik ilkelerimizle hareket ediyoruz.', 'Navexmar is a company that offers shipping agency and international trade services with a different approach from other firms in the sector. Since our establishment, we strive to be a human-centered, inclusive, and fully integrated company. We act with our principles of continuous development and innovation to offer the best service to our customers.') }}
         </p>
 
         <div class="perspective-grid">
