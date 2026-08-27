@@ -169,10 +169,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
                         </div>
                     </div>
 
-                    <div class="vhf-row">
-                        <i class="fa-solid fa-tower-broadcast"></i>
-                        <span>VHF: Ch 16 / 12 / 11 (Port & Marine Channels)</span>
-                    </div>
+
                 </div>
 
                 <div class="info-card">

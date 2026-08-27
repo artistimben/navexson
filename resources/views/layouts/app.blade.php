@@ -474,7 +474,6 @@
         <div class="topbar-left">
             <span class="topbar-item"><i class="fa-solid fa-phone"></i> {{ \App\Models\SiteSetting::get('phone', '+90 212 444 62 83') }}</span>
             <span class="topbar-item"><i class="fa-solid fa-envelope"></i> {{ \App\Models\SiteSetting::get('email', 'ops@navexmar.com') }}</span>
-            <span class="topbar-item"><i class="fa-solid fa-tower-broadcast"></i> VHF Ch 16 · 12 · 11</span>
         </div>
         <div class="topbar-right">
             <div class="topbar-live"><span class="dot-live"></span> {{ __t('7/24 Nöbetçi Aktif', '24/7 Duty Active') }}</div>
@@ -614,7 +613,6 @@
                 <div class="f-contact"><i class="fa-solid fa-phone"></i><span>{{ \App\Models\SiteSetting::get('phone', '+90 212 444 62 83') }}</span></div>
                 <div class="f-contact"><i class="fa-solid fa-mobile-screen"></i><span>{{ __t('Acil', 'Emergency') }}: {{ \App\Models\SiteSetting::get('mobile', '+90 532 700 90 90') }}</span></div>
                 <div class="f-contact"><i class="fa-solid fa-envelope"></i><span>{{ \App\Models\SiteSetting::get('email', 'ops@navexmar.com') }}</span></div>
-                <div class="f-contact"><i class="fa-solid fa-tower-broadcast"></i><span>VHF Ch 16 / 12 / 11</span></div>
             </div>
 
         </div>
