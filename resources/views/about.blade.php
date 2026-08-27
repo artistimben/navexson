@@ -230,7 +230,7 @@
                 <div class="sec-label">{{ __t('Biz Kimiz?', 'Who We Are') }}</div>
                 <h2 class="sec-title">{{ __t('Akdeniz ve Türkiye Liman Hizmetlerinde Güvenilir Acente', 'Trusted Agency in Mediterranean & Turkish Ports') }}</h2>
                 <p style="color:var(--muted); font-size:0.92rem; line-height:1.75; margin-bottom:16px;">
-                    {{ __t('NAVEXMAR, İskenderun, Dörtyol, Ceyhan, Mersin, Taşucu ve Antalya başta olmak üzere Türkiye\'nin tüm limanlarında 7/24 gemi acenteliği, ikmal, teknik destek ve deniz lojistiği hizmetleri sunmaktadır.', 'NAVEXMAR delivers 24/7 shipping agency, bunkering, technical support and maritime logistics across Iskenderun, Dortyol, Ceyhan, Mersin, Tasucu, Antalya and all Turkish ports.') }}
+                    {{ __t('NAVEXMAR, İskenderun, Ceyhan, Mersin, Taşucu ve Antalya başta olmak üzere Türkiye\'nin tüm limanlarında 7/24 gemi acenteliği, ikmal, teknik destek ve deniz lojistiği hizmetleri sunmaktadır.', 'NAVEXMAR delivers 24/7 shipping agency, bunkering, technical support and maritime logistics across Iskenderun, Ceyhan, Mersin, Tasucu, Antalya and all Turkish ports.') }}
                 </p>
                 <p style="color:var(--muted); font-size:0.92rem; line-height:1.75; margin-bottom:24px;">
                     {{ __t('Uzman ekibimiz, en karmaşık operasyonlarda bile sıfır gecikme prensibiyle hareket ederek armatörlerimize ve kiracılarımıza şeffaf, güvenilir ve rekabetçi acentelik çözümleri üretir.', 'Our expert team operates under a zero-delay principle even in complex operations, delivering transparent, reliable and cost-effective agency solutions.') }}

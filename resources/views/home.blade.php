@@ -319,9 +319,9 @@
         <div class="ops-grid">
             <div class="ops-card">
                 <div class="ops-card-icon"><i class="fa-solid fa-anchor"></i></div>
-                <div class="ops-card-title">İskenderun & Dörtyol</div>
-                <div class="ops-card-subtitle">İskenderun Port · İsdemir · Toros</div>
-                <div class="ops-card-spec">Dökme Yük, Konteyner & Sıvı<br>Maks Draft: 18.0 m<br>7/24 Rıhtım & Demir Acenteliği</div>
+                <div class="ops-card-title">İskenderun Limanları</div>
+                <div class="ops-card-subtitle">İskenderun Port · İsdemir</div>
+                <div class="ops-card-spec">Dökme Yük & Sıvı Yük<br>Maks Draft: 18.0 m<br>7/24 Rıhtım & Demir Acenteliği</div>
             </div>
 
             <div class="ops-card">
@@ -335,7 +335,7 @@
                 <div class="ops-card-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
                 <div class="ops-card-title">Mersin Uluslararası Limanı</div>
                 <div class="ops-card-subtitle">MIP · Ataş Terminali</div>
-                <div class="ops-card-spec">Konteyner, Ro-Ro & Genel Kargo<br>Draft: 15.8 m<br>Hızlı Gümrük & Tahliye</div>
+                <div class="ops-card-spec">Ro-Ro & Genel Kargo<br>Draft: 15.8 m<br>Hızlı Gümrük & Tahliye</div>
             </div>
 
             <div class="ops-card">
