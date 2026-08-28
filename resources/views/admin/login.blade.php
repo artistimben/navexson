@@ -98,8 +98,9 @@
     <div class="login-card">
         <div class="brand-logo" style="display:flex; flex-direction:column; align-items:center;">
             <img src="{{ asset('images/artisan.jpeg') }}" alt="NAVEX Logo" style="height: 72px; width: 72px; object-fit: cover; border-radius: 14px; margin-bottom: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.25);">
-            <div>NAVEX<span style="color:#D4AF37;">MAR</span></div>
-            <div style="font-size: 0.85rem; font-weight: 600; color: #94A3B8; margin-top: 4px;">Acente Yönetim Paneli</div>
+            <div style="font-size:1.4rem; font-weight:900; color:#FFFFFF; letter-spacing:-0.4px;">NAVEX</div>
+            <div style="font-size:0.72rem; font-weight:800; color:#D4AF37; letter-spacing:1px; margin-top:2px;">SHIPPING & TRADING COMPANY</div>
+            <div style="font-size: 0.82rem; font-weight: 600; color: #94A3B8; margin-top: 6px;">Acente Yönetim Paneli</div>
         </div>
 
         @if($errors->any())

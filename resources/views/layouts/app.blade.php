@@ -182,13 +182,25 @@
             box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
         }
         .nav-logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+        .nav-brand-main {
             font-family: 'Outfit', sans-serif;
             font-weight: 900;
             font-size: 1.35rem;
             color: var(--navy);
             letter-spacing: -0.4px;
         }
-        .nav-logo-text span { color: var(--blue); }
+        .nav-brand-sub {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 0.62rem;
+            color: var(--blue);
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
 
         .nav-links {
             display: flex;
@@ -406,11 +418,25 @@
             color: var(--cyan); font-size: 1rem;
         }
         .footer-logo-text {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 900; font-size: 1.25rem;
-            color: white; letter-spacing: -0.3px;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
         }
-        .footer-logo-text span { color: var(--cyan); }
+        .footer-brand-main {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: 1.35rem;
+            color: white;
+            letter-spacing: -0.3px;
+        }
+        .footer-brand-sub {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 0.62rem;
+            color: var(--cyan);
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
         .footer-about-p { color: rgba(255, 255, 255, 0.6); font-size: 0.84rem; line-height: 1.7; margin-bottom: 18px; }
         .footer-certs { display: flex; flex-wrap: wrap; gap: 8px; }
         .footer-cert {
@@ -498,7 +524,10 @@
     <div class="nav-inner">
         <a href="{{ route('home') }}" class="nav-logo">
             <img src="{{ asset('images/artisan.jpeg') }}" alt="NAVEX Logo" style="height: 48px; width: 48px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 12px rgba(6, 24, 46, 0.15);">
-            <div class="nav-logo-text">NAVEX<span>MAR</span></div>
+            <div class="nav-logo-text">
+                <span class="nav-brand-main">NAVEX</span>
+                <span class="nav-brand-sub">SHIPPING & TRADING COMPANY</span>
+            </div>
         </a>
 
         <ul class="nav-links">
@@ -532,7 +561,10 @@
     <button class="mob-close" id="mobClose">&times;</button>
     <div class="nav-logo" style="margin-bottom:16px;">
         <img src="{{ asset('images/artisan.jpeg') }}" alt="NAVEX Logo" style="height: 48px; width: 48px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 12px rgba(6, 24, 46, 0.15);">
-        <div class="nav-logo-text">NAVEX<span>MAR</span></div>
+        <div class="nav-logo-text">
+            <span class="nav-brand-main">NAVEX</span>
+            <span class="nav-brand-sub">SHIPPING & TRADING COMPANY</span>
+        </div>
     </div>
     
     <div class="lang-switcher" style="margin-bottom:16px; align-self:flex-start;">
@@ -573,7 +605,10 @@
             <div>
                 <div class="footer-logo" style="align-items: flex-start;">
                     <img src="{{ asset('images/artisan.jpeg') }}" alt="NAVEX Logo" style="height: 54px; width: 54px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.3); margin-bottom: 8px;">
-                    <div class="footer-logo-text">NAVEX<span>MAR</span></div>
+                    <div class="footer-logo-text">
+                        <span class="footer-brand-main">NAVEX</span>
+                        <span class="footer-brand-sub">SHIPPING & TRADING COMPANY</span>
+                    </div>
                 </div>
                 <p class="footer-about-p">{{ __t(\App\Models\SiteSetting::get('about_short', 'İskenderun\'dan Antalya\'ya tüm Akdeniz ve Türkiye limanlarında armatör ve kiracılara 7/24 profesyonel gemi acenteliği ve operasyonel destek hizmetleri sunuyoruz.'), 'Providing 24/7 professional shipping agency services and operational support for shipowners and charterers in Iskenderun, Antalya and all ports of Turkey.') }}</p>
                 <div class="footer-certs">
@@ -631,7 +666,7 @@
         </div>
 
         <div class="footer-bottom">
-            <span>&copy; {{ date('Y') }} NAVEXMAR {{ __t('Denizcilik ve Liman Hizmetleri A.Ş. Tüm hakları saklıdır.', 'Maritime & Port Services Inc. All rights reserved.') }}</span>
+            <span>&copy; {{ date('Y') }} NAVEX SHIPPING & TRADING COMPANY. {{ __t('Tüm hakları saklıdır.', 'All rights reserved.') }}</span>
             <a href="{{ route('admin.login') }}"><i class="fa-solid fa-lock"></i> {{ __t('Yönetim Paneli', 'Admin Panel') }}</a>
         </div>
     </div>

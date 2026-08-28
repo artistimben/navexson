@@ -357,7 +357,10 @@
     <aside class="sidebar">
         <div class="sidebar-brand" style="display:flex; align-items:center; gap:10px;">
             <img src="{{ asset('images/artisan.jpeg') }}" alt="NAVEX Logo" style="height: 36px; width: 36px; object-fit: cover; border-radius: 8px;">
-            <span>NAVEXMAR</span>
+            <div style="display:flex; flex-direction:column; line-height:1.1;">
+                <span style="font-weight:900; font-size:0.95rem; color:#FFFFFF;">NAVEX</span>
+                <span style="font-size:0.52rem; color:#94A3B8; letter-spacing:0.5px; font-weight:700;">SHIPPING & TRADING</span>
+            </div>
             <span style="font-size:0.75rem; color:#94A3B8; font-weight:600; margin-left: auto;">{{ __t('PANEL', 'ADMIN') }}</span>
         </div>
 
